@@ -7,6 +7,7 @@ import Join from "./pages/Join";
 import Layout from "./components/Layouts/Layout";
 import PrivacyPolicies from "./pages/PrivacyPolicies";
 import TermsAndConditions from "./pages/TermsConditions";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/sponsers" element={<Sponser />} />
           <Route path="/privacy-policies" element={<PrivacyPolicies />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </div>
