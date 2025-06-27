@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -74,6 +75,11 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --default-font-family: "Poppins";
+}
+
+body {
+  font-family: var(--default-font-family), sans-serif;
 }
 
 .dark {
