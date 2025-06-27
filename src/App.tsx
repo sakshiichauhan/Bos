@@ -5,6 +5,8 @@ import Partner from "./pages/Partner";
 import Sponser from "./pages/Sponser";
 import Join from "./pages/Join";
 import Layout from "./components/Layouts/Layout";
+import PrivacyPolicies from "./pages/PrivacyPolicies";
+import TermsAndConditions from "./pages/TermsConditions";
 
 const App = () => {
   return (
@@ -13,9 +15,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/join" element={<Join />} />
-          <Route path="/partner" element={<Partner />} />
+          <Route path="/partners" element={<Partner />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/sponser" element={<Sponser />} />
+          <Route path="/sponsers" element={<Sponser />} />
+          <Route path="/privacy-policies" element={<PrivacyPolicies />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         </Routes>
       </Layout>
     </div>
