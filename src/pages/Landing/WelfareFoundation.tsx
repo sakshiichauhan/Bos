@@ -77,13 +77,14 @@ const HswfSection: FC = () => {
 
       {/* —————————— DESCRIPTION 3 —————————— */}
       <p
-        className="
-          mx-auto mb-[clamp(8px,2vw,16px)]
-          max-w-[52rem] lg:max-w-[60rem]
-          text-[clamp(15px,2vw,24px)] lg:text-xl xl:text-2xl
-          font-semibold leading-relaxed lg:leading-[1.5] text-gray-600
-        "
-      >
+   className="
+     mx-auto mb-[clamp(8px,2vw,16px)]
+     max-w-[52rem] lg:max-w-none          /* ← unlimited width on ≥ 1024 px */
+     text-[clamp(15px,2vw,24px)] lg:text-xl xl:text-2xl
+     font-semibold leading-relaxed lg:leading-[1.5] text-gray-600
+     lg:whitespace-nowrap                 /* ← keep the whole sentence in one line */
+   "
+ >
         We believe sports is not just play—it’s a pathway to leadership, health,
         and unity.
       </p>
