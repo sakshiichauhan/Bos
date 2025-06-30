@@ -1,38 +1,47 @@
-// src/components/ThankYou.tsx
-import { FC } from 'react';
-import Button from './Button';';        // assumes the button is already TS-ready
+// ThankYou.tsx
+import React from 'react';
 
-interface ThankYouProps {
+export interface ThankYouProps {
+
   onClose: () => void;
+
   title: string;
-  subtitle: string;
+
+  subtitle?: string;
 }
 
-const ThankYou: FC<ThankYouProps> = ({ onClose, title, subtitle }) => (
-  /* Overlay */
-  <div className="fixed inset-0 z-[1000000] flex items-center justify-center
-                  bg-black/40 backdrop-blur-sm">
-    {/* Dialog */}
-    <div className="relative mx-4 w-full max-w-[750px] rounded-lg bg-white p-8
-                    text-center shadow-lg md:p-10">
-      <h1 className="text-3xl font-semibold md:text-4xl">Thank you</h1>
 
-      {/* Rainbow underline */}
-      <div className="mx-auto my-3 h-1 w-72 rounded
-                      bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400
-                      via-green-500 via-blue-500 via-indigo-500 to-violet-500
-                      md:w-[410px]" />
+const ThankYou: React.FC<ThankYouProps> = ({ onClose, title, subtitle }) => {
+  return (
+    <div className="fixed inset-0 z-[1000000] flex items-center justify-center bg-black/40">
+      {/* Dialog */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        className="relative w-full max-w-xl rounded-lg bg-white p-8 text-center shadow-lg md:max-w-md"
+      >
+        <h1 className="text-4xl font-semibold md:text-2xl">Thank you</h1>
 
-      <h2 className="text-xl font-medium text-gray-900 md:text-2xl">{title}</h2>
-      <p className="mt-2 text-lg text-gray-700 md:mt-3 md:text-xl">{subtitle}</p>
+        {/* rainbow underline */}
+        <div className="mx-auto mt-3 h-1 w-96 rounded bg-gradient-to-r from-red-500 via-yellow-400 to-violet-600 md:w-40" />
 
-      <button
-        className="mt-6 px-12 py-3 text-xl font-bold md:px-16 md:text-2xl"
-        onClick={onClose}
-        text="OK"
-      />
+        <h2 className="mt-4 text-2xl font-medium text-gray-900 md:text-xl">{title}</h2>
+
+        {subtitle && (
+          <p className="mt-2 text-lg font-normal text-gray-700 md:text-base">{subtitle}</p>
+        )}
+
+        {/* OK button */}
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-6 inline-block rounded bg-gradient-to-r from-purple-600 to-indigo-600 px-12 py-3 text-lg font-bold text-white shadow transition hover:opacity-90 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500"
+        >
+          OK
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ThankYou;

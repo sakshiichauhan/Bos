@@ -8,6 +8,8 @@ import WhySponser from "./WhySponser";
 import PartnersSection from "./PartnerInterest";
 import InstaFastTrack from "./InstaTrack";
 import CommunityTalks from "./CommunityTalk";
+import StayConnected from "./StayConnected";
+import WelfareFoundation from "./WelfareFoundation";
 
 const Landing = () => {
   
@@ -24,7 +26,8 @@ const Landing = () => {
        <PartnersSection />
       <InstaFastTrack />
       <CommunityTalks />
-    
+      <StayConnected />
+      <WelfareFoundation />
 
       
 
