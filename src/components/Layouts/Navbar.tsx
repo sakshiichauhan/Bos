@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
-import Logo from '../../assets/LandingPage/Logos/bosLogo.png';
-import { Button } from '../ui/button';
+import Logo from '../../assets/LandingPage/Logos/Logo.png';
+import  {Button}  from '../ui/button';
 
-export default function Navbar() {
+
+const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -21,94 +22,62 @@ export default function Navbar() {
   const linkColor = location.pathname === '/' ? 'text-white' : 'text-black';
 
   return (
-    <div
-      className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-300 ${scrolled ? 'bg-white/20 backdrop-blur-md py-2 shadow-md' : 'bg-transparent py-4'
-        }`}
-    >
-      <div className="max-w-[1440px] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 mx-auto flex justify-between items-center flex-wrap">
-        <Link to="/" className="flex items-center">
-          <img
-            src={Logo}
-            alt="BOS Logo"
-            className={`transition-all duration-300 ${scrolled ? 'w-[140px]' : 'w-[163px]'
-              }`}
-          />
+    <div className={`fixed top-0 left-0 w-full z-[100000000000] transition-all duration-300 ${scrolled ? 'bg-white/20 backdrop-blur-md py-2' : 'bg-transparent py-4'} px-[clamp(16px,10vw,240px)]`}>
+      <div className="flex justify-between items-center flex-wrap">
+        <Link to="/" className="flex-shrink-0">
+          <img src={Logo} alt="BOS Logo" className={`h-auto w-[clamp(100px,10vw,163px)] ${scrolled ? 'w-[140px]' : ''}`} />
         </Link>
 
-        <nav
-          className={`hidden md:flex gap-6 items-center transition-colors ${scrolled ? 'text-black' : 'text-white'
-            }`}
-        >
-          {[
-            { href: '#about', label: 'ABOUT' },
-            { href: '#events', label: 'EVENTS' },
-            { href: '#joinas', label: 'JOIN AS' },
-            { href: '#sponser', label: 'SPONSERS' },
-            { href: '#partners', label: 'PARTNERS' },
-            { href: '#insta', label: 'INSTA TRACK' },
-            { href: '#network', label: 'HSWF.NETWORK' },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`uppercase font-medium text-sm hover:underline ${linkColor}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+        {/* Nav Links */}
+        <nav className={`hidden md:flex gap-6 items-center uppercase text-[clamp(10px,1vw,16px)] ${scrolled ? 'text-black' : 'text-white'}`}>
+          <a href="#about" className={linkColor} onClick={() => setIsMenuOpen(false)}>ABOUT</a>
+          <a href="#events" className={linkColor} onClick={() => setIsMenuOpen(false)}>EVENTS</a>
+          <a href="#joinas" className={linkColor} onClick={() => setIsMenuOpen(false)}>JOIN AS</a>
+          <a href="#sponser" className={linkColor} onClick={() => setIsMenuOpen(false)}>SPONSORS</a>
+          <a href="#partners" className={linkColor} onClick={() => setIsMenuOpen(false)}>PARTNERS</a>
+          <a href="#insta" className={linkColor} onClick={() => setIsMenuOpen(false)}>INSTA TRACK</a>
+          <a href="#network" className={linkColor} onClick={() => setIsMenuOpen(false)}>HSWF.NETWORK</a>
         </nav>
 
+        {/* Join Button */}
         <div className="hidden md:block">
           <Button
-            className={`px-6 py-2 text-lg md:text-xl font-semibold border rounded-lg transition-all duration-300 ${scrolled
-                ? 'text-black border-black'
-                : 'text-white border-white hover:bg-white hover:text-black'
-              }`}
-            onClick={() => navigate('/join')}
-          >Join</Button>
+            className="text-[clamp(14px,1.5vw,24px)] font-medium py-[clamp(6px,1.3vw,12px)] px-[clamp(14px,2vw,32px)] rounded-lg border-2 border-transparent bg-white text-black hover:bg-gray-200 transition-all duration-300"
+            text="Join"
+            onClick={() => navigate("/join")}
+          />
         </div>
 
-        <button
-          className="md:hidden ml-auto text-2xl"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <FiX /> : <FiMenu />}
-        </button>
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden ml-auto">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white z-[1001]">
+            {isMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white text-black px-6 py-4 space-y-4">
-          {[
-            { href: '#about', label: 'ABOUT' },
-            { href: '#events', label: 'EVENTS' },
-            { href: '#joinas', label: 'JOIN AS' },
-            { href: '#sponser', label: 'SPONSERS' },
-            { href: '#partners', label: 'PARTNERS' },
-            { href: '#insta', label: 'INSTA TRACK' },
-            { href: '#network', label: 'HSWF.NETWORK' },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="block text-base font-medium uppercase"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-
+        <div className={`flex flex-col gap-4 mt-4 md:hidden ${scrolled ? 'text-black' : 'text-white'} text-sm uppercase`}>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>ABOUT</a>
+          <a href="#events" onClick={() => setIsMenuOpen(false)}>EVENTS</a>
+          <a href="#joinas" onClick={() => setIsMenuOpen(false)}>JOIN AS</a>
+          <a href="#sponser" onClick={() => setIsMenuOpen(false)}>SPONSORS</a>
+          <a href="#partners" onClick={() => setIsMenuOpen(false)}>PARTNERS</a>
+          <a href="#insta" onClick={() => setIsMenuOpen(false)}>INSTA TRACK</a>
+          <a href="#network" onClick={() => setIsMenuOpen(false)}>HSWF.NETWORK</a>
           <Button
-            className="w-full mt-4 px-4 py-2 text-white bg-black rounded-lg text-center"
+            className="button-rainbow"
+            text="Join"
             onClick={() => {
               setIsMenuOpen(false);
-              navigate('/join');
+              navigate("/join");
             }}
-          >Join</Button>
+          />
         </div>
       )}
     </div>
   );
-}
+};
 
+export default Navbar;
