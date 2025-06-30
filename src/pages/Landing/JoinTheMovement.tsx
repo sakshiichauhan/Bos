@@ -13,7 +13,7 @@ import im4F from '../../assets/LandingPage/JoinTheMovement/im3F.png';
 import im5F from '../../assets/LandingPage/JoinTheMovement/im4F.png';
 
 import {Button} from '../../components/ui/button';
-// import WhatYouGet from '../../Components/WhatYouGet';
+import WhatYouGet from '@/Pages/Components/WhatYouGet';
 
 const JoinTheMovement: React.FC = () => {
   const navigate = useNavigate();
@@ -141,7 +141,7 @@ const JoinTheMovement: React.FC = () => {
         </div>
       </div>
 
-      {/* <WhatYouGet /> */}
+      <WhatYouGet />
     </section>
   );
 };

@@ -1,78 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic");
 @import "tailwindcss";
 @import "tw-animate-css";
-.custom-button {
-  @apply relative overflow-hidden px-6 py-2 rounded-[10px] text-[clamp(16px,2vw,24px)] font-medium text-gray-900 bg-white border-2 border-transparent z-[1];
-  background: 
-    linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) border-box;
+
+
+
+
+@keyframes scroll-marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-33.333%); }
+}
+/* ── 🏷️ utility class ── */
+.animate-scroll-marquee {
+  /* default → desktop ≥ 1024 px */
+  animation: scroll-marquee 30s linear infinite;
 }
 
-.custom-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 3px;
-  border-radius: 7px;
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* 🔀 speed-up when the viewport shrinks */
+@media (max-width: 1024px) {
+  .animate-scroll-marquee {
+    animation-duration: 25s;
+  }
 }
 
-.custom-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-  filter: blur(12px);
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  z-index: -2;
-}
-
-.custom-button:hover::before {
-  opacity: 1;
-}
-
-.custom-button:hover::after {
-  opacity: 0.4;
-}
-
-.custom-button:hover {
-  color: #000;
-}
-
-/* Optional: Disabled Button Style */
-.disabled-btn {
-  @apply opacity-50 pointer-events-none;
+@media (max-width: 764px) {
+  .animate-scroll-marquee {
+    animation-duration: 20s;
+  }
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -274,4 +227,89 @@ body {
       @apply px-4 py-[40px] pb-[64px];
     }
   }
+}
+.no-scrollbar::-webkit-scrollbar {        /* Chrome / Safari / Edge */
+  display: none;
+}
+.no-scrollbar {                           /* Firefox + legacy Edge */
+  -ms-overflow-style: none;               /* IE & Edge */
+  scrollbar-width: none;                  /* Firefox */
+}
+.cursor-grab     { cursor: grab;     }
+.cursor-grabbing { cursor: grabbing; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.no-select { user-select: none; }
+.grabbing { cursor: grabbing; }
+.rainbow-btn {
+  position: relative;
+  /* solid inner bg + gradient border */
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)
+      border-box;
+  border: 2px solid transparent;
+  overflow: hidden;        /* keep the glow inside */
+}
+
+/* subtle inner gradient outline */
+.rainbow-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 3px;            /* width of inner outline */
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* blurred horizontal sweep on hover */
+.rainbow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: -2;
+}
+
+/* Hover / focus-visible interactions */
+.rainbow-btn:hover::before,
+.rainbow-btn:focus-visible::before {
+  opacity: 1;
+}
+.rainbow-btn:hover::after,
+.rainbow-btn:focus-visible::after {
+  opacity: 0.4;
 }
