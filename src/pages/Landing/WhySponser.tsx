@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import sportImg from '@/assets/LandingPage/SponsorBos/Sponserwhy.png';
 import vector   from '@/assets/LandingPage/CelebratingHeritage/Vector.png';
-import { Button } from '@/components/ui/button';
+import Button from '../Components/Button';
 
 interface Benefit { title: string }
 const benefits: Benefit[] = [

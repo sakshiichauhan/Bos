@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
           {/* Buttons */}
           <div className="mt-[clamp(20px,3vw,30px)] flex flex-wrap gap-[clamp(12px,2vw,24px)]">
             <Button
-              className="bg-white text-black font-medium text-[clamp(16px,2vw,24px)] py-[clamp(14px,1.5vw,17px)] px-[clamp(24px,3vw,48px)] rounded-lg border-2 border-transparent bg-gradient-to-r from-white via-white to-white hover:from-white hover:to-white"
+             
               text="Join the movement"
               onClick={() => navigate('/join')}
             />

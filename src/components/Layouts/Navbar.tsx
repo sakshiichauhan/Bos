@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import Logo from '../../assets/LandingPage/Logos/Logo.png';
-import  {Button}  from '../ui/button';
+import Button from '@/Pages/Components/Button';
 
 
 const Navbar: React.FC = () => {

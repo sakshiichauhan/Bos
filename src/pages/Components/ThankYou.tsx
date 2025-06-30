@@ -1,6 +1,6 @@
 // src/components/ThankYou.tsx
 import { FC } from 'react';
-import {Button} from '@/components/ui/button';        // assumes the button is already TS-ready
+import Button from './Button';';        // assumes the button is already TS-ready
 
 interface ThankYouProps {
   onClose: () => void;

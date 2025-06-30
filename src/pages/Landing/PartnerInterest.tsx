@@ -7,6 +7,7 @@ import cultureIcon   from '@/assets/Icons/PartnerInterest/ic2.png';
 import sportsIcon    from '@/assets/Icons/PartnerInterest/ic3.png';
 import govIcon       from '@/assets/Icons/PartnerInterest/ic4.png';
 import nonprofitIcon from '@/assets/Icons/PartnerInterest/ic5.png';
+import Button from '../Components/Button';
 
 type PartnerColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 
@@ -149,18 +150,24 @@ const PartnersSection: FC = () => {
         Let’s work together to create impact where it matters most—on the ground.
       </p>
 
-      <button
+      <Button
+       className="
+                px-[clamp(16px,4vw,32px)]
+                py-[clamp(10px,2vw,16px)]
+                text-[clamp(16px,3vw,24px)] font-semibold
+                shadow-[0_3px_4px_rgba(0,0,0,0.4)]
+
+                max-[764px]:text-[clamp(14px,3vw,18px)]
+
+                max-[500px]:text-[clamp(12px,3vw,16px)]
+                max-[500px]:px-[clamp(10px,3vw,16px)]
+                max-[500px]:py-[clamp(6px,1.5vw,10px)]
+              "
+              text="Become a Partner"
         onClick={() => navigate('/partners')}
-        className="
-          font-semibold rounded-md shadow-md transition-colors
-          text-[24px] px-[32px] py-[16px]
-          hover:bg-gray-100
-          max-[1360px]:text-[20px] max-[1360px]:px-[28px] max-[1360px]:py-[14px]
-          max-[768px]:text-[16px]  max-[768px]:px-[24px]  max-[768px]:py-[14px]
-        "
-      >
-        Become a Partner
-      </button>
+      />
+      
+  
     </section>
   );
 };
