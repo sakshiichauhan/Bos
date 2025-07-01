@@ -1,21 +1,17 @@
-/* --------------------------------------------------------------------------
-   InstaFastTrack.tsx  –  1-to-1 Tailwind port with correct mobile width
-   -------------------------------------------------------------------------- */
+import { useRef, useState, type FC, type MouseEvent } from "react";
+import { Link } from "react-router-dom";
 
-import { useRef, useState, type FC, type MouseEvent } from 'react';
-import { Link } from 'react-router-dom';
+import videoData from "@/VideoData";
+import type { VideoData, ReelPoster } from "@/types/video";
+import logo from "@/assets/LandingPage/Logos/InstaIcon.png";
+import placeholder from "@/assets/LandingPage/Videos/samplePlaceholder.jpg";
 
-import videoData                             from '@/VideoData';
-import type { VideoData, ReelPoster }        from '@/types/video';
-import logo                                   from '@/assets/LandingPage/Logos/InstaIcon.png';
-import placeholder                            from '@/assets/LandingPage/Videos/samplePlaceholder.jpg';
-
-import Reel1 from '@/assets/LandingPage/Videos/reel1.png';
-import Reel2 from '@/assets/LandingPage/Videos/reel2.png';
-import Reel3 from '@/assets/LandingPage/Videos/reel3.png';
-import Reel4 from '@/assets/LandingPage/Videos/reel4.png';
-import Reel5 from '@/assets/LandingPage/Videos/reel5.png';
-import Reel6 from '@/assets/LandingPage/Videos/reel6.png';
+import Reel1 from "@/assets/LandingPage/Videos/reel1.png";
+import Reel2 from "@/assets/LandingPage/Videos/reel2.png";
+import Reel3 from "@/assets/LandingPage/Videos/reel3.png";
+import Reel4 from "@/assets/LandingPage/Videos/reel4.png";
+import Reel5 from "@/assets/LandingPage/Videos/reel5.png";
+import Reel6 from "@/assets/LandingPage/Videos/reel6.png";
 
 /* -------------------------------------------------------------------------- */
 
@@ -34,7 +30,7 @@ const InstaFastTrack: FC = () => {
   const [playingId, setPlayingId] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
 
-  const videoRefs   = useRef<Record<number, HTMLVideoElement | null>>({});
+  const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
   const drag = useRef({ startX: 0, scrollLeft: 0 });
@@ -59,20 +55,21 @@ const InstaFastTrack: FC = () => {
     }
   };
 
-  const handleEnded = (id: number) => setPlayingId(p => (p === id ? null : p));
+  const handleEnded = (id: number) =>
+    setPlayingId((p) => (p === id ? null : p));
 
   /* --------------------------- drag-to-scroll --------------------------- */
   const onMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     if (!scrollerRef.current) return;
     setIsDragging(true);
-    drag.current.startX     = e.pageX - scrollerRef.current.offsetLeft;
+    drag.current.startX = e.pageX - scrollerRef.current.offsetLeft;
     drag.current.scrollLeft = scrollerRef.current.scrollLeft;
   };
 
   const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !scrollerRef.current) return;
     e.preventDefault();
-    const x    = e.pageX - scrollerRef.current.offsetLeft;
+    const x = e.pageX - scrollerRef.current.offsetLeft;
     const walk = (x - drag.current.startX) * 2;
     scrollerRef.current.scrollLeft = drag.current.scrollLeft - walk;
   };
@@ -100,19 +97,19 @@ const InstaFastTrack: FC = () => {
         "
       >
         <div>
-  <h2 className="font-bold text-[clamp(40px,4vw,48px)]">
-    BOS Insta Fast Track
-  </h2>
+          <h2 className="font-bold text-[clamp(40px,4vw,48px)]">
+            BOS Insta Fast Track
+          </h2>
 
-  <p
-    className="
+          <p
+            className="
       mt-[6px] max-[784px]:mt-[4px]
       text-[clamp(20px,2vw,28px)] text-gray-600
     "
-  >
-    Quick Glimpses. Real Stories.All Heart.
-  </p>
-</div>
+          >
+            Quick Glimpses. Real Stories.All Heart.
+          </p>
+        </div>
 
         <div className="max-w-[585px] text-[clamp(14px,1.5vw,20px)] text-gray-600">
           <p>
@@ -148,25 +145,25 @@ const InstaFastTrack: FC = () => {
         </div>
       </div>
 
-      {/* ----------------------------------------------------------------- */}
-      {/*  Horizontal reel scroller                                         */}
-      {/* ----------------------------------------------------------------- */}
+     
+     
       <div
         ref={scrollerRef}
         className={`
           flex overflow-x-auto gap-[clamp(16px,3vw,32px)]
           snap-x snap-mandatory pb-[16px]
-          ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}
+          ${isDragging ? "cursor-grabbing" : "cursor-grab"}
           no-scrollbar
         `}
-        style={{ marginRight: 'calc(-1 * clamp(16px,12vw,248px))' }}
+        style={{ marginRight: "calc(-1 * clamp(16px,12vw,248px))" }}
         onMouseDown={onMouseDown}
         onMouseLeave={stopDrag}
         onMouseUp={stopDrag}
         onMouseMove={onMouseMove}
       >
         {videoData.map((video: VideoData) => {
-          const poster    = reelPoster.find(r => r.id === video.id)?.url ?? placeholder;
+          const poster =
+            reelPoster.find((r) => r.id === video.id)?.url ?? placeholder;
           const isPlaying = playingId === video.id;
 
           return (
@@ -178,19 +175,21 @@ const InstaFastTrack: FC = () => {
                 max-[784px]:w-[134px]          /* exact mobile width */
                 aspect-[9/16]
                 rounded-[12px] snap-start bg-gray-200
-                ${isPlaying ? 'border-[4px]' : ''}
+                ${isPlaying ? "border-[4px]" : ""}
               `}
               style={
                 isPlaying
                   ? {
                       borderImage:
-                        'linear-gradient(135deg,#F43F5E 0%,#F97316 25%,#FACC15 50%,#10B981 75%,#3B82F6 100%) 1',
+                        "linear-gradient(135deg,#F43F5E 0%,#F97316 25%,#FACC15 50%,#10B981 75%,#3B82F6 100%) 1",
                     }
                   : undefined
               }
             >
               <video
-                ref={el => { videoRefs.current[video.id] = el; }}
+                ref={(el) => {
+                  videoRefs.current[video.id] = el;
+                }}
                 poster={poster}
                 muted
                 playsInline
@@ -212,8 +211,13 @@ const InstaFastTrack: FC = () => {
                   onClick={() => togglePlay(video.id)}
                 >
                   <svg viewBox="0 0 24 24" width="48" height="48">
-                    <circle cx="12" cy="12" r="12" fill="rgba(254,254,254,0.40)" />
-                    <path   d="M9 7v10l8-5z" fill="rgba(254,254,254,0.80)" />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="12"
+                      fill="rgba(254,254,254,0.40)"
+                    />
+                    <path d="M9 7v10l8-5z" fill="rgba(254,254,254,0.80)" />
                   </svg>
                 </div>
               )}

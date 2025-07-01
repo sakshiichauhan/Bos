@@ -125,7 +125,7 @@ const CommunityTalks: React.FC = () => {
         onMouseMove={onMove}
         className="
           select-none cursor-grab
-          w-screen overflow-x-auto overflow-y-hidden whitespace-nowrap
+          w-screen overflow-x-auto whitespace-nowrap
           snap-x snap-mandatory px-[24px] scrollbar-hide
         "
       >

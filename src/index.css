@@ -313,3 +313,18 @@ body {
 .rainbow-btn:focus-visible::after {
   opacity: 0.4;
 }
+.bg-gradient-text {
+  background-image: linear-gradient(
+    to right,
+    #DF0024,
+    #FC9F0B,
+    #FFCD00,
+    #3BB402,
+    #0085C7,
+    #4F449D
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

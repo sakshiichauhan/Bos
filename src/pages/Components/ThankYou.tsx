@@ -1,46 +1,46 @@
-// ThankYou.tsx
 import React from 'react';
+import Button from '@/Pages/Components/Button';
 
-export interface ThankYouProps {
-
+type ThankYouProps = {
   onClose: () => void;
-
   title: string;
-
-  subtitle?: string;
-}
-
+  subtitle: string;
+};
 
 const ThankYou: React.FC<ThankYouProps> = ({ onClose, title, subtitle }) => {
   return (
-    <div className="fixed inset-0 z-[1000000] flex items-center justify-center bg-black/40">
-      {/* Dialog */}
-      <div
-        role="dialog"
-        aria-modal="true"
-        className="relative w-full max-w-xl rounded-lg bg-white p-8 text-center shadow-lg md:max-w-md"
-      >
-        <h1 className="text-4xl font-semibold md:text-2xl">Thank you</h1>
+    <>
+      {/* Backdrop Blur */}
+      <div className="fixed inset-0 bg-black bg-opacity-40 z-[999999]" />
 
-        {/* rainbow underline */}
-        <div className="mx-auto mt-3 h-1 w-96 rounded bg-gradient-to-r from-red-500 via-yellow-400 to-violet-600 md:w-40" />
+      {/* Modal */}
+      <div className="fixed inset-0 z-[1000000] flex items-center justify-center">
+        <div className="bg-white max-w-[750px] w-full text-center px-8 py-10 rounded-lg shadow-xl mx-4 sm:mx-0 sm:px-10 relative">
+          {/* Heading */}
+          <h1 className="text-[40px] font-semibold constant-heading sm:text-[30px] md:text-[35px] lg:text-[40px]">
+            Thank you
+          </h1>
 
-        <h2 className="mt-4 text-2xl font-medium text-gray-900 md:text-xl">{title}</h2>
+          {/* Gradient underline */}
+          <div className="h-1 rounded w-[410px] max-w-full mx-auto my-3 bg-gradient-to-r from-red-500 via-yellow-400 to-violet-500"></div>
 
-        {subtitle && (
-          <p className="mt-2 text-lg font-normal text-gray-700 md:text-base">{subtitle}</p>
-        )}
+          {/* Title */}
+          <h2 className="text-[25px] font-medium text-[#222] sm:text-[20px]">{title}</h2>
 
-        {/* OK button */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="mt-6 inline-block rounded bg-gradient-to-r from-purple-600 to-indigo-600 px-12 py-3 text-lg font-bold text-white shadow transition hover:opacity-90 focus:outline-none focus-visible:ring focus-visible:ring-indigo-500"
-        >
-          OK
-        </button>
+          {/* Subtitle */}
+          <p className="mt-2 text-[22px] text-[#333] font-normal mx-[30px] sm:text-[18px] sm:mx-2">
+            {subtitle}
+          </p>
+
+          {/* OK Button */}
+          <Button
+            text="OK"
+            onClick={onClose}
+            className="mt-6 text-[24px] font-bold px-12 py-2 sm:text-[20px] sm:px-8 sm:py-2"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

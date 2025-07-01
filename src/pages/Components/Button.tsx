@@ -1,39 +1,52 @@
 import React from 'react';
 
-/** Public props for the Rainbow Button */
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Text shown inside the button */
+interface RainbowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
+  className?: string;
 }
 
-/**
- * Gradient-border button with hover glow.
- *
- * - Uses Tailwind utility classes for sizing, typography, spacing.
- * - Adds a `rainbow-btn` class that the CSS below styles for the fancy border.
- */
-const Button: React.FC<ButtonProps> = ({
+const RainbowButton: React.FC<RainbowButtonProps> = ({
   text,
   className = '',
-  disabled,
   ...rest
-}) => (
-  <button
-    className={`
-      rainbow-btn                       /* custom CSS (below) for border + glow */
-      inline-flex items-center justify-center
-      font-medium rounded-lg
-      px-6 py-2 text-gray-900
-      transition-colors duration-300
-      ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:text-black'}
-      ${className}
-    `}
-    disabled={disabled}
-    {...rest}
-  >
-    {text}
-  </button>
-);
+}) => {
+  return (
+    <button
+      {...rest}
+      className={`relative inline-block px-6 py-2 font-medium 
+        text-gray-900 bg-white text-[clamp(16px,2vw,24px)] 
+        rounded-[10px] border-2 border-transparent overflow-hidden z-10 
+        transition duration-300 ease-in-out hover:text-black 
+        focus:outline-none group ${className}`}
+    >
+      {text}
 
-export default Button;
+      {/* ::before - rainbow border always visible */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 p-[3px] rounded-[10px] z-[-1] opacity-100 transition-opacity duration-300"
+        style={{
+          background:
+            'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',
+          WebkitMask:
+            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+        }}
+      />
+
+      {/* ::after - blurred hover glow (still on hover only) */}
+      <span
+        aria-hidden
+        className="absolute top-0 left-[-50%] w-[200%] h-full opacity-0 z-[-2] transition-opacity duration-[800ms] group-hover:opacity-40"
+        style={{
+          background:
+            'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',
+          filter: 'blur(12px)',
+        }}
+      />
+    </button>
+  );
+};
+
+export default RainbowButton;

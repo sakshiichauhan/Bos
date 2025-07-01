@@ -1,7 +1,8 @@
+import Sponsor from "./Landing/Form/Sponsor/SponsorBondOver"
 export default function Sponser() {
   return (
     <div>
-      <h1>Sponser</h1>
+    <Sponsor/>
     </div>
   )
 }
