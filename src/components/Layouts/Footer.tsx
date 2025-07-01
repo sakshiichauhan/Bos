@@ -1,14 +1,13 @@
-/* src/components/Footer.tsx */
-import { FC } from 'react';
+
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
-import logo     from '@/assets/Footer/Logo2.png';
-import phone    from '@/assets/Footer/phone.png';
-import mail     from '@/assets/Footer/mail.png';
+import logo from '@/assets/Footer/Logo2.png';
+import phone from '@/assets/Footer/phone.png';
+import mail from '@/assets/Footer/mail.png';
 import location from '@/assets/Footer/location.png';
 
-const Footer: FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-black text-white text-xs sm:text-sm lg:text-base">
       {/* ——— 3 columns ——— */}
@@ -35,16 +34,36 @@ const Footer: FC = () => {
 
           {/* social icons */}
           <div className="flex gap-3 text-xl md:text-2xl">
-            <a href="https://www.facebook.com/bondoversports"   target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/bondoversports"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebookF />
             </a>
-            <a href="https://www.instagram.com/bond.oversports" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/bond.oversports"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
-            <a href="https://www.linkedin.com/company/bondoversports" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/bondoversports"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="https://youtube.com/@bondoversports"       target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a
+              href="https://youtube.com/@bondoversports"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
               <FaYoutube />
             </a>
           </div>
@@ -52,12 +71,17 @@ const Footer: FC = () => {
 
         {/* Address */}
         <div className="flex-1 min-w-[240px] bg-[#111] rounded-lg py-8 md:py-12 px-4 text-center">
-          <Link to="https://maps.app.goo.gl/5Mbx4aYvQgkt6ay98" target="_blank" className="inline-block">
-            <img src={location} alt="" className="w-8 h-auto mx-auto mb-3" />
+          <a
+            href="https://maps.app.goo.gl/5Mbx4aYvQgkt6ay98"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <img src={location} alt="Location" className="w-8 h-auto mx-auto mb-3" />
             <p className="font-semibold">Bond Over Sports</p>
             <p>601, Magnus Tower, Sector 73</p>
             <p>Noida, Uttar Pradesh, India 201307</p>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -67,10 +91,21 @@ const Footer: FC = () => {
       {/* Bottom bar */}
       <div className="flex flex-wrap justify-between items-center gap-2 text-center text-[10px] sm:text-xs lg:text-sm px-4 md:px-16 lg:px-60 py-4 text-[#ccc]">
         <span>
-          © Bond Over Sports | Powered by&nbsp;
-          <Link to="https://hswf.network/" className="hover:text-white">HSWF.Network</Link>
-          <span className="block sm:inline"> - Initiative of&nbsp;
-            <Link to="https://alpheric.com/" target="_blank" className="font-bold hover:text-white">Alpheric</Link>
+          © Bond Over Sports | Powered by{' '}
+          <a href="https://hswf.network/" className="hover:text-white" target="_blank" rel="noopener noreferrer">
+            HSWF.Network
+          </a>
+          <span className="block sm:inline">
+            {' '}
+            - Initiative of{' '}
+            <a
+              href="https://alpheric.com/"
+              className="font-bold hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alpheric
+            </a>
           </span>
         </span>
 
