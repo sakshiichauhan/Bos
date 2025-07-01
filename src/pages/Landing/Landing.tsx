@@ -13,7 +13,7 @@ import CommunityTalks from "./CommunityTalk";
 import StayConnected from "./StayConnected";
 import WelfareFoundation from "./WelfareFoundation";
 
-import useEvents from "@/Hooks/useEvents";
+import useEvents from "../../Hooks/useEvents";
 
 const Landing = () => {
   const { events, loading, error, eventsCount } = useEvents();
