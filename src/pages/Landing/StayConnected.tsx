@@ -1,49 +1,46 @@
-import React, { useState } from 'react';
-import type { FormEvent } from 'react';
-import { toast, Toaster } from 'sonner';
-import axios from 'axios';
+import React, { useState } from "react";
+import type { FormEvent } from "react";
+import { toast, Toaster } from "sonner";
+import axios from "axios";
 
-import Button from '../Components/Button';
-import ThankYou from '../Components/ThankYou';
+import Button from "@/Pages/Components/Button";
+import ThankYou from "@/Pages/Components/ThankYou";
 
-// ---------- helpers ----------
 const isValidTenDigitNumber = (input: string) => /^\d{10}$/.test(input);
 
-// ---------- component ----------
 const StayConnected: React.FC = () => {
   const [showThankYou, setShowThankYou] = useState<boolean>(false);
-  const [number, setNumber] = useState<string>('');
-  const [name, setName] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [number, setNumber] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  // form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!isValidTenDigitNumber(number)) {
-      setError('Number must be exactly 10 digits.');
+      setError("Number must be exactly 10 digits.");
       return;
     }
 
     if (name.trim().length <= 2) {
-      toast.error('Input must be more than 2 characters!');
+      toast.error("Input must be more than 2 characters!");
       return;
     }
 
-    setError('');
+    setError("");
     try {
-      await axios.post('/api/subscribe', { name, number });
+      await axios.post("/api/subscribe", { name, number });
       setShowThankYou(true);
     } catch (err) {
-      toast.error('Something went wrong. Please try again.');
+      toast.error("Something went wrong. Please try again.");
     }
   };
 
   const handleClose = () => {
     setShowThankYou(false);
-    setNumber('');
-    setName('');
-    setError('');
+    setNumber("");
+    setName("");
+    setError("");
   };
 
   return (
@@ -51,19 +48,22 @@ const StayConnected: React.FC = () => {
       <div className="relative w-full rounded-xl p-[2px]">
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-500 via-yellow-400 to-violet-600" />
         <div className="relative z-10 flex w-full flex-wrap gap-6 rounded-xl bg-white p-12 max-lg:p-8 max-md:p-6">
-          
           {/* Header */}
           <div className="flex w-full flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
             <h2 className="text-4xl font-extrabold tracking-tight max-md:text-3xl">
               Stay&nbsp;Connected
             </h2>
             <p className="max-w-prose text-lg text-gray-600 max-md:text-base">
-              Follow our journey, explore events, and be part of the growing BOS family.
+              Follow our journey, explore events, and be part of the growing BOS
+              family.
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex w-full flex-wrap items-center gap-6">
+          <form
+            onSubmit={handleSubmit}
+            className="flex w-full flex-wrap items-center gap-6"
+          >
             <input
               type="text"
               placeholder="Full Name"
@@ -83,14 +83,17 @@ const StayConnected: React.FC = () => {
                 value={number}
                 onChange={(e) => {
                   setNumber(e.target.value);
-                  setError('');
+                  setError("");
                 }}
                 maxLength={10}
                 className="w-full flex-1 rounded-r-lg px-6 py-3 text-lg focus:outline-none"
               />
             </div>
 
-            <Button text="Subscribe" className="text-lg font-semibold px-7 py-3 shadow-md" />
+            <Button
+              text="Subscribe"
+              className="text-lg font-semibold px-7 py-3 shadow-md"
+            />
           </form>
 
           {error && (

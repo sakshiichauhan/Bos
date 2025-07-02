@@ -2,9 +2,9 @@
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import sportImg from '@/assets/LandingPage/SponsorBos/Sponserwhy.png';
-import vector   from '@/assets/LandingPage/CelebratingHeritage/Vector.png';
-import Button from '../Components/Button';
+import sportImg from "@/assets/LandingPage/SponsorBos/Sponserwhy.png";
+import vector   from "@/assets/LandingPage/CelebratingHeritage/Vector.png";
+import Button from "@/Pages/Components/Button";
 
 interface Benefit { title: string }
 const benefits: Benefit[] = [

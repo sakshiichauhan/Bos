@@ -1,10 +1,10 @@
 import React from 'react';
-import img1 from '@/assets/LandingPage/CelebratingHeritage/Heritage1.png';
-import img2 from '@/assets/LandingPage/CelebratingHeritage/Heritage2.png';
-import img3 from '@/assets/LandingPage/CelebratingHeritage/Heritage3.png';
-import avatar1 from '@/assets/LandingPage/CelebratingHeritage/Avatar1.png';
-import avatar2 from'@/assets/LandingPage/CelebratingHeritage/Avatar2.png';
-import vector from '@/assets/LandingPage/CelebratingHeritage/Vector.png';
+import img1 from "@/assets/LandingPage/CelebratingHeritage/Heritage1.png";
+import img2 from "@/assets/LandingPage/CelebratingHeritage/Heritage2.png";
+import img3 from "@/assets/LandingPage/CelebratingHeritage/Heritage3.png";
+import avatar1 from "@/assets/LandingPage/CelebratingHeritage/Avatar1.png";
+import avatar2 from"@/assets/LandingPage/CelebratingHeritage/Avatar2.png";
+import vector from "@/assets/LandingPage/CelebratingHeritage/Vector.png";
 
 const HeritageEvents: React.FC = () => {
   return (

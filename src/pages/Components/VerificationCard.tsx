@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Button from '@/Pages/Components/Button';
-import verifyIcon from '@/assets/Icons/verify.png';
+import Button from "@/Pages/Components/Button";
+import verifyIcon from "@/assets/Icons/verify.png";
 
 type Props = {
   phoneNumber: string;

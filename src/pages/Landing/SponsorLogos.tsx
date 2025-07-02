@@ -1,13 +1,13 @@
 import React from 'react';
 
-/* ⇣  logo assets  ⇣ */
-import sponsor1 from '@/assets/LandingPage/Logos/lo1.png';
-import sponsor2 from '@/assets/LandingPage/Logos/lo2.png';
-import sponsor3 from '@/assets/LandingPage/Logos/lo3.png';
-import sponsor4 from '@/assets/LandingPage/Logos/lo4.png';
-import sponsor5 from '@/assets/LandingPage/Logos/lo5.png';
-import sponsor6 from '@/assets/LandingPage/Logos/lo6.png';
-import sponsor7 from '@/assets/LandingPage/Logos/lo7.jpg';
+
+import sponsor1 from "@/assets/LandingPage/Logos/lo1.png";
+import sponsor2 from "@/assets/LandingPage/Logos/lo2.png";
+import sponsor3 from "@/assets/LandingPage/Logos/lo3.png";
+import sponsor4 from "@/assets/LandingPage/Logos/lo4.png";
+import sponsor5 from "@/assets/LandingPage/Logos/lo5.png";
+import sponsor6 from "@/assets/LandingPage/Logos/lo6.png";
+import sponsor7 from "@/assets/LandingPage/Logos/lo7.jpg";
 
 type Sponsor = { name: string; logo: string };
 

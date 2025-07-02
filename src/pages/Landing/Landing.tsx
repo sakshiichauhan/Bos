@@ -1,19 +1,19 @@
-import Navbar from "../../../src/components/Layouts/Navbar";
-import HeroSection from "../../Pages/Landing/HeroSection";
-import BOShead from "./BOShead";
-import HeritageEvents from "./CelebratingHeritage";
-import UpcomingEventHorizontalCard from "./UpcomingEventHorizontalCard";
-import EventCard from "./UpcomingEventCard";
-import JoinTheMovement from "./JoinTheMovement";
-import SponsorLogos from "./SponsorLogos";
-import WhySponser from "./WhySponser";
-import PartnersSection from "./PartnerInterest";
-import InstaFastTrack from "./InstaTrack";
-import CommunityTalks from "./CommunityTalk";
-import StayConnected from "./StayConnected";
-import WelfareFoundation from "./WelfareFoundation";
 
-import useEvents from "../../Hooks/useEvents";
+import Navbar from "@/components/Layouts/Navbar";
+import HeroSection from "@/Pages/Landing/HeroSection";
+import BOShead from "@/Pages/Landing/BOShead";
+import HeritageEvents from "@/Pages/Landing/CelebratingHeritage";
+import UpcomingEventHorizontalCard from "@/Pages/Landing/UpcomingEventHorizontalCard";
+import EventCard from "@/Pages/Landing/UpcomingEventCard";
+import JoinTheMovement from "@/Pages/Landing/JoinTheMovement";
+import SponsorLogos from "@/Pages/Landing/SponsorLogos";
+import WhySponser from "@/Pages/Landing/WhySponser";
+import PartnersSection from "@/Pages/Landing/PartnerInterest";
+import InstaFastTrack from "@/Pages/Landing/InstaTrack";
+import CommunityTalks from "@/Pages/Landing/CommunityTalk";
+import StayConnected from "@/Pages/Landing/StayConnected";
+import WelfareFoundation from "@/Pages/Landing/WelfareFoundation";
+import useEvents from "@/Hooks/useEvents";
 
 const Landing = () => {
   const { events, loading, error, eventsCount } = useEvents();

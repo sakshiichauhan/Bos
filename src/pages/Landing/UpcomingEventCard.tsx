@@ -1,8 +1,7 @@
-
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
-import calendarIcon from '@/assets/Icons/calenderIcon.png';
-import Button from '@/Pages/Components/Button';
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import calendarIcon from "@/assets/Icons/calenderIcon.png";
+import Button from "@/Pages/Components/Button";
 
 interface EventCardProps {
   image: string;
@@ -26,18 +25,11 @@ const EventCard = ({
   return (
     <div className="flex justify-center mb-6">
       <div className="w-[320px] rounded-[16px] bg-white border-[2px] border-black/10 shadow-[0_8px_20px_rgba(0,0,0,0.1)] flex flex-col overflow-hidden justify-between relative mb-6">
-        
         {/* Image */}
-        <img
-          src={image}
-          alt={title}
-      
-          
-        />
+        <img src={image} alt={title} />
 
         {/* Body */}
         <div className="relative px-[18px] pt-6 pb-4">
-
           {/* Age group badge */}
           <p className="absolute top-[-10px] left-[10px] z-[1] bg-white inline-block px-[8px] py-[4px] rounded-[8px] text-[16px] text-gray-500 ">
             Age group: {ageGroup}
@@ -64,7 +56,7 @@ const EventCard = ({
           <div className="relative left-[50px] bottom-[-2px] p-[2px] rounded-t-[24px]">
             <Button
               onClick={() =>
-                navigate('/register', {
+                navigate("/register", {
                   state: { uuid, image, age: ageGroup, title, location, date },
                 })
               }

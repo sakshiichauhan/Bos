@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { LISTING_API } from "../config";
+import { LISTING_API } from "@/config";
 import img from "@/assets/TempPhoto.png";
 
 export interface Event {

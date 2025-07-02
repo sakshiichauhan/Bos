@@ -2,10 +2,10 @@
 
 import { Link } from 'react-router-dom';
 
-import logo from '@/assets/LandingPage/Welfare/WellfareLogo.png';
-import Button from '@/Pages/Components/Button';
+import logo from "@/assets/LandingPage/Welfare/WellfareLogo.png";
+import Button from "@/Pages/Components/Button";
 
-const HswfSection = () => {
+const WelfareFoundation = () => {
   return (
     <section
       id="network"
@@ -87,4 +87,4 @@ const HswfSection = () => {
   );
 };
 
-export default HswfSection;
+export default WelfareFoundation;

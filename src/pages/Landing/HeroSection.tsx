@@ -2,10 +2,10 @@ import stadiumImg from "@/assets/LandingPage/HeroSection/HeroBackground.jpg";
 import Button from "@/Pages/Components/Button";
 import fitLogo from "@/assets/LandingPage/HeroSection/FIT.jpg";
 import nitiLogo from "@/assets/LandingPage/HeroSection/NITI.png";
-import Navbar from '@/components/Layouts/Navbar';
+import Navbar from "@/components/Layouts/Navbar";
 import { useNavigate } from 'react-router-dom';
 
-const Hero: React.FC = () => {
+const HeroSection: React.FC = () => {
   const navigate = useNavigate();
 
   const scrollToEvents = () => {
@@ -87,4 +87,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

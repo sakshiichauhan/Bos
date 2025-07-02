@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { OTP_SEND_URL, OTP_VERIFY_URL } from "../config";
+import { OTP_SEND_URL, OTP_VERIFY_URL } from "@/config";
 
 export default function useOtp() {
   const [otpSent, setOtpSent] = useState(false);

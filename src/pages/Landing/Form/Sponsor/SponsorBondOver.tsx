@@ -1,20 +1,20 @@
 
 
 import React, { useEffect, useState } from 'react';
-import Appbar from '@/components/Layouts/Navbar';
+import Appbar from "@/components/Layouts/Navbar";
 
-import Button from '@/Pages/Components/Button';
-import LogoCard from '@/Pages/Landing/SponsorLogos';
-import VerificationCode from '@/Pages/Components/VerificationCard';
-import ThankYou from '@/Pages/Components/ThankYou';
-import useOtp from '@/Hooks/useOtp';
-import SponsorshipCards from './Sponsorship';
+import Button from "@/Pages/Components/Button";
+import LogoCard from "@/Pages/Landing/SponsorLogos";
+import VerificationCode from "@/Pages/Components/VerificationCard";
+import ThankYou from "@/Pages/Components/ThankYou";
+import useOtp from "@/Hooks/useOtp";
+import SponsorshipCards from "@/Pages/Landing/Form/Sponsor/Sponsorship";
 
 
-import eduIcon from '@/assets/Form/Sponsor/SponsorFlag.png';
-import cultureIcon from '@/assets/Form/Sponsor/SponsorAuthentic.png';
-import govIcon from '@/assets/Form/Sponsor/SponsorCsr.png';
-import nonprofitIcon from '@/assets/Form/Sponsor/SponsorContent.png';
+import eduIcon from "@/assets/Form/Sponsor/SponsorFlag.png";
+import cultureIcon from "@/assets/Form/Sponsor/SponsorAuthentic.png";
+import govIcon from "@/assets/Form/Sponsor/SponsorCsr.png";
+import nonprofitIcon from "@/assets/Form/Sponsor/SponsorContent.png";
 
 const partners = [
   {

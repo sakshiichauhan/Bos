@@ -2,10 +2,10 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
-import logo from '@/assets/Footer/Logo2.png';
-import phone from '@/assets/Footer/phone.png';
-import mail from '@/assets/Footer/mail.png';
-import location from '@/assets/Footer/location.png';
+import logo from "@/assets/Footer/Logo2.png";
+import phone from "@/assets/Footer/phone.png";
+import mail from "@/assets/Footer/mail.png";
+import location from "@/assets/Footer/location.png";
 
 const Footer = () => {
   return (

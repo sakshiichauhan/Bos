@@ -1,19 +1,19 @@
 
 import { useNavigate } from 'react-router-dom';
 
-import Button from '@/Pages/Components/Button';
-import WhatYouGet from '@/Pages/Components/WhatYouGet';
+import Button from "@/Pages/Components/Button";
+import WhatYouGet from "@/Pages/Components/WhatYouGet";
 
-import im1 from '@/assets/LandingPage/JoinTheMovement/img1.png';
-import im2 from '@/assets/LandingPage/JoinTheMovement/img5.png';
-import im3 from '@/assets/LandingPage/JoinTheMovement/img2.png';
-import im4 from '@/assets/LandingPage/JoinTheMovement/img3.png';
-import im5 from '@/assets/LandingPage/JoinTheMovement/img4.png';
-import im1F from '@/assets/LandingPage/JoinTheMovement/im1F.png';
-import im2F from '@/assets/LandingPage/JoinTheMovement/im5F.png';
-import im3F from '@/assets/LandingPage/JoinTheMovement/im2F.png';
-import im4F from '@/assets/LandingPage/JoinTheMovement/im3F.png';
-import im5F from '@/assets/LandingPage/JoinTheMovement/im4F.png';
+import im1 from "@/assets/LandingPage/JoinTheMovement/img1.png";
+import im2 from "@/assets/LandingPage/JoinTheMovement/img5.png";
+import im3 from "@/assets/LandingPage/JoinTheMovement/img2.png";
+import im4 from "@/assets/LandingPage/JoinTheMovement/img3.png";
+import im5 from "@/assets/LandingPage/JoinTheMovement/img4.png";
+import im1F from "@/assets/LandingPage/JoinTheMovement/im1F.png";
+import im2F from "@/assets/LandingPage/JoinTheMovement/im5F.png";
+import im3F from "@/assets/LandingPage/JoinTheMovement/im2F.png";
+import im4F from "@/assets/LandingPage/JoinTheMovement/im3F.png";
+import im5F from "@/assets/LandingPage/JoinTheMovement/im4F.png";
 
 interface CardData {
   id: string;

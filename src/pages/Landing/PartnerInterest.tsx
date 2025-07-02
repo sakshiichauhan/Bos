@@ -2,12 +2,12 @@
 
 import { useNavigate } from 'react-router-dom';
 
-import eduIcon from '@/assets/Icons/PartnerInterest/ic1.png';
-import cultureIcon from '@/assets/Icons/PartnerInterest/ic2.png';
-import sportsIcon from '@/assets/Icons/PartnerInterest/ic3.png';
-import govIcon from '@/assets/Icons/PartnerInterest/ic4.png';
-import nonprofitIcon from '@/assets/Icons/PartnerInterest/ic5.png';
-import Button from '../Components/Button';
+import eduIcon from "@/assets/Icons/PartnerInterest/ic1.png";
+import cultureIcon from "@/assets/Icons/PartnerInterest/ic2.png";
+import sportsIcon from "@/assets/Icons/PartnerInterest/ic3.png";
+import govIcon from "@/assets/Icons/PartnerInterest/ic4.png";
+import nonprofitIcon from "@/assets/Icons/PartnerInterest/ic5.png";
+import Button from "@/Pages/Components/Button";
 
 type PartnerColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 
