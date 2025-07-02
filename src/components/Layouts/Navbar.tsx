@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
         {/* Join Button (Visible on all screens) */}
         <div className="block">
           <Button
-            className={`transition-all duration-300 font-medium border-2 border-transparent rounded-lg cursor-pointer z-10 overflow-hidden ${
+            className={`transition-all bg-white duration-300 font-medium border-2 border-transparent rounded-lg cursor-pointer z-10 overflow-hidden ${
               scrolled
                 ? 'text-black text-[14px] sm:text-[16px] md:text-[18px] px-4 py-2'
                 : 'text-gray-900 text-[clamp(14px,1.5vw,24px)] px-[clamp(14px,2vw,32px)] py-[clamp(6px,1.3vw,12px)]'

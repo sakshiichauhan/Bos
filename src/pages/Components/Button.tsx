@@ -14,7 +14,7 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({
     <button
       {...rest}
       className={`relative inline-block px-6 py-2 font-medium 
-        text-gray-900 bg-white text-[clamp(16px,2vw,24px)] 
+        text-gray-900  text-[clamp(16px,2vw,24px)] 
         rounded-[10px] border-2 border-transparent overflow-hidden z-10 
         transition duration-300 ease-in-out hover:text-black 
         focus:outline-none group ${className}`}

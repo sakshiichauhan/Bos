@@ -9,7 +9,7 @@ import VerificationCode from "@/Pages/Components/VerificationCard";
 import ThankYou from "@/Pages/Components/ThankYou";
 import useOtp from "@/Hooks/useOtp";
 import SponsorshipCards from "@/Pages/Landing/Form/Sponsor/Sponsorship";
-
+import SponsorForm from "@/Pages/Landing/Form/Sponsor/SponsorForm";
 
 import eduIcon from "@/assets/Form/Sponsor/SponsorFlag.png";
 import cultureIcon from "@/assets/Form/Sponsor/SponsorAuthentic.png";
@@ -232,8 +232,10 @@ const Sponsor: React.FC = () => {
         </div>
       </section>
 <SponsorshipCards/>
+  <SponsorForm/>
       <LogoCard />
-      <RegisterForEvent />
+     
+    
     </>
   );
 };

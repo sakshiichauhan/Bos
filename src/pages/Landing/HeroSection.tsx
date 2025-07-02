@@ -71,14 +71,13 @@ const HeroSection: React.FC = () => {
 
             {/* Secondary Button with rainbow border */}
             <div className="relative">
-              <div className="absolute inset-0 rounded-[8px] border-2 border-transparent bg-[linear-gradient(black,black),linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet)] bg-origin-padding bg-clip-border pointer-events-none z-0" />
+              {/* Remove or comment out the gradient background div if not needed */}
+              {/* <div className="absolute inset-0 rounded-[8px] border-2 border-transparent bg-[linear-gradient(black/50,black/50) bg-origin-padding bg-clip-border pointer-events-none z-0" /> */}
               <Button
-                className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] hover:before:opacity-100 hover:after:opacity-30 overflow-hidden"
+                className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] overflow-hidden  hover:bg-neutral-800 hover:bg-none"
                 onClick={scrollToEvents}
                 text=" Explore Events"
               />
-             
-            
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ const ThankYou: React.FC<ThankYouProps> = ({ onClose, title, subtitle }) => {
   return (
     <>
       {/* Backdrop Blur */}
-      <div className="fixed inset-0 bg-black bg-opacity-40 z-[999999]" />
+      <div className="fixed inset-0  z-[999999]" />
 
       {/* Modal */}
       <div className="fixed inset-0 z-[1000000] flex items-center justify-center">
