@@ -2,10 +2,11 @@ import { Route, Routes } from "react-router-dom";
 
 import Landing from "@/Pages/Landing/Landing";
 // import Register from "./pages/Register";
-// import Partner from "./pages/Partner";
+import PartnerInterest from "@/Pages/Landing/Form/Partner";
 import Sponser from "@/Pages/Sponser";
 import Join from "@/Pages/Landing/Form/Join/Join";
-import Layout from "@/components/Layouts/Layout"
+import Layout from "@/components/Layouts/Layout";
+import Register from "@/Pages/Landing/Form/Register";
 
 // import Sponser from "./Pages/Sponser";
 // import Join from "./Pages/Join";
@@ -23,6 +24,8 @@ const App = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/join" element={<Join />} />
             <Route path="/sponsers" element={<Sponser/>} />
+              <Route path="/partners" element={<PartnerInterest/>}/>
+                 <Route path="/register" element={<Register/>}/>
         </Routes>
       </Layout>
     </div>
