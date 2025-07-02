@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-// import Landing from "./Pages/Landing/Landing";
+import Landing from "./Pages/Landing/Landing";
 // import Register from "./pages/Register";
 // import Partner from "./pages/Partner";
 import Sponser from "./Pages/Sponser";
@@ -15,7 +15,7 @@ const App = () => {
     <div>
       <Layout>
         <Routes>
-          {/* <Route path="/" element={<Landing />} /> */}
+          <Route path="/" element={<Landing />} />
           <Route path="/join" element={<Join />} />
             <Route path="/sponsers" element={<Sponser/>} />
         </Routes>

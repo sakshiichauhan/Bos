@@ -1,9 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-
-import Navbar from "../../../../components/Layouts/Navbar"
-import Button from "../../../../Pages../"
+import Appbar from '@/components/Layouts/Navbar';
 
 import Button from '@/Pages/Components/Button';
 import LogoCard from '@/Pages/Landing/SponsorLogos';
@@ -131,7 +129,7 @@ const Sponsor: React.FC = () => {
 
   return (
     <>
-      <Navbar />
+      <Appbar />
 
       {/* ─── HERO ─── */}
       <section
