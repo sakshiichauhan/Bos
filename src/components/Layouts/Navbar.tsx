@@ -37,17 +37,17 @@ const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 w-full z-[10000] transition-all duration-300 ${
         scrolled
-          ? 'bg-white/20 backdrop-blur-md shadow-sm py-[6px]'
+          ? 'bg-white/10 backdrop-blur-xl shadow-sm py-[6px]'
           : 'bg-transparent py-[clamp(12px,2vw,16px)]'
       } px-[clamp(16px,10vw,240px)] md:px-[clamp(40px,15vw,240px)]`}
     >
       <div className="flex justify-between items-center flex-wrap w-full">
         {/* Logo */}
-        <Link to="/" className="shrink-0">
+        <Link to="/" className="">
           <img
             src={Logo}
             alt="Logo"
-            className={`transition-all duration-300 w-[clamp(100px,10vw,163px)] ${
+            className={` w-[clamp(100px,10vw,163px)] ${
               scrolled ? 'w-[clamp(90px,9vw,140px)]' : ''
             }`}
           />
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`uppercase font-medium text-[clamp(10px,1vw,16px)] transition-colors duration-300 ${textColor}`}
+              className={`uppercase font-normal text-[clamp(10px,1vw,18px)] transition-colors duration-300 ${textColor}`}
             >
               {link.label}
             </a>

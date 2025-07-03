@@ -31,23 +31,23 @@ const EventCard = ({
         {/* Body */}
         <div className="relative px-[18px] pt-6 pb-4">
           {/* Age group badge */}
-          <p className="absolute top-[-10px] left-[10px] z-[1] bg-white inline-block px-[8px] py-[4px] rounded-[8px] text-[16px] text-gray-500 ">
+          <p className="absolute top-[-10px] left-[10px] z-[1] bg-white inline-block px-[8px] py-[4px] rounded-[8px] text-[16px] text-[#4B4B4B] font-normal">
             Age group: {ageGroup}
           </p>
 
           {/* Title */}
-          <h3 className="text-[20px] font-bold text-gray-900 mb-2 h-[60px] overflow-hidden text-ellipsis line-clamp-2">
+          <h3 className="text-[20px] font-semibold text-[#000000] mb-2 h-[60px] overflow-hidden text-ellipsis line-clamp-2">
             {title}
           </h3>
 
           {/* Location */}
-          <p className="text-[18px] text-gray-600 flex items-center gap-[6px] mb-1">
+          <p className="text-[18px] text-[#4B4B4B] font-normal flex items-center gap-[6px] mb-1">
             <FaMapMarkerAlt className="text-red-500 text-[18px]" />
             {location}
           </p>
 
           {/* Date */}
-          <p className="text-[18px] text-gray-600 flex items-center gap-[6px] mb-4">
+          <p className="text-[18px] font-normal text-[#4B4B4B] flex items-center gap-[6px] mb-4">
             <img src={calendarIcon} alt="calendar" className="w-4 h-4" />
             {date}
           </p>
