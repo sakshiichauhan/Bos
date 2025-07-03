@@ -4,11 +4,11 @@ import React, { useEffect } from 'react';
 import Appbar from "@/components/Layouts/Navbar";
 
 
-import Logo from "@/Pages/Landing/Form/Sponsor/LogoCards"
+import Logo from "@/pages/Landing/Form/Sponsor/LogoCards"
 
-import SponsorshipCards from "@/Pages/Landing/Form/Sponsor/Sponsorship";
-import SponsorForm from "@/Pages/Landing/Form/Sponsor/SponsorForm";
-import LetsTalk from "@/Pages/Landing/Form/Sponsor/LetsTalk";
+import SponsorshipCards from "@/pages/Landing/Form/Sponsor/Sponsorship";
+import SponsorForm from "@/pages/Landing/Form/Sponsor/SponsorForm";
+import LetsTalk from "@/pages/Landing/Form/Sponsor/LetsTalk";
 import eduIcon from "@/assets/Form/Sponsor/SponsorFlag.png";
 import cultureIcon from "@/assets/Form/Sponsor/SponsorAuthentic.png";
 import govIcon from "@/assets/Form/Sponsor/SponsorCsr.png";
@@ -146,12 +146,12 @@ const Sponsor: React.FC = () => {
           ))}
         </div>
       </section>
-<SponsorshipCards/>
-  <SponsorForm/>
-     <Logo/>
-      <LetsTalk/>
-     
-    
+      <SponsorshipCards />
+      <SponsorForm />
+      <Logo />
+      <LetsTalk />
+
+
     </>
   );
 };

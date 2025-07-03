@@ -3,7 +3,7 @@
 import { useNavigate } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import calendarIcon from "@/assets/Icons/calenderIcon.png";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 type Props = {
   image: string;

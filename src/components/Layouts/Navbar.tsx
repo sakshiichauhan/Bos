@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 import Logo from "@/assets/LandingPage/Logos/Logo.png";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 
 

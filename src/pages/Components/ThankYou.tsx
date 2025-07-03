@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 type ThankYouProps = {
   onClose: () => void;

@@ -7,7 +7,7 @@ import cultureIcon from "@/assets/Icons/PartnerInterest/ic2.png";
 import sportsIcon from "@/assets/Icons/PartnerInterest/ic3.png";
 import govIcon from "@/assets/Icons/PartnerInterest/ic4.png";
 import nonprofitIcon from "@/assets/Icons/PartnerInterest/ic5.png";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 type PartnerColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 

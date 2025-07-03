@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Button from '@/Pages/Components/Button';
-import WhatYouGet from '@/Pages/Components/WhatYouGet';
+import Button from '@/pages/Components/Button';
+import WhatYouGet from '@/pages/Components/WhatYouGet';
 
 import im1 from '@/assets/LandingPage/JoinTheMovement/img1.png';
 import im2 from '@/assets/LandingPage/JoinTheMovement/img5.png';
@@ -42,7 +42,7 @@ const CARDS: CardData[] = [
     subtitle: 'Capture and share stories from the field',
     imgLg: im3,
     imgSm: im3F,
-    cta: 'Join as a Content Creator',
+    cta: 'Join as a Creator',
     contentMaxWidth: 'max-w-[300px]',
   },
   {
@@ -145,7 +145,7 @@ const Card = ({
     >
       {/* Text */}
       <div className={`flex flex-col space-y-2 ${contentMaxWidth}`}>
-        <span className="text-[16px] font-normal bg-linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) text-transparent bg-clip-text">
+        <span className="text-[20px] font-bold bg-gradient-to-r via-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-violet-500 text-transparent bg-clip-text">
           {label}
         </span>
         <h3 className="text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111827] leading-snug">
@@ -158,7 +158,8 @@ const Card = ({
           <Button
             text={cta}
             onClick={onClick}
-            className="px-[16px] py-[10px] border-[1.5px] border-purple-600 text-[20px] sm:text-[15px] md:text-[15px] font-semibold hover:shadow-md transition"
+            className='leading-tighter'
+            // className="px-[16px] py-[10px] border-[1.5px] border-purple-600 text-[20px] sm:text-[15px] md:text-[15px] font-semibold hover:shadow-md transition"
           />
         </div>
       </div>
@@ -175,7 +176,7 @@ const Card = ({
           alt={title}
           className={`${
             isOrganiser
-              ? 'w-[637px] h-[446.28px] rounded-[18px] border-[4px] border-white'
+              ? 'w-[637px] h-[446.28px] rounded-[18px] border-[4px] border-transparent '
               : 'max-h-[280px] w-auto'
           } object-contain`}
         />

@@ -1,36 +1,31 @@
 /* ───────── Join.tsx (type-error-free) ──────────────────────────────── */
 import React, { useState } from "react";
-import axios   from "axios";
+import axios from "axios";
 import { toast } from "sonner";
+import RenderInput from "@/pages/Components/RenderInput";
+import Button from "@/pages/Components/Button";
+import VerificationCode from "@/pages/Components/VerificationCard";
+import ThankYou from "@/pages/Components/ThankYou";
+import WhatYouGet from "@/pages/Components/WhatYouGet";
+import Appbar from "@/components/Layouts/Navbar";
+import useOtp from "@/hooks/useOtp";
+import PlayerIcon from "@/assets/Form/Join/Player.png";
+import VolunteerIcon from "@/assets/Form/Join/Volunteer.png";
+import OrganizerIcon from "@/assets/Form/Join/Organizer.png";
+import ContentIcon from "@/assets/Form/Join/Content.png";
+import SupporterIcon from "@/assets/Form/Join/Supporter.png";
 
-import RenderInput     from "@/Pages/Components/RenderInput";
-import Button          from "@/Pages/Components/Button";
-import VerificationCode from "@/Pages/Components/VerificationCard";
-import ThankYou        from "@/Pages/Components/ThankYou";
-import WhatYouGet      from "@/Pages/Components/WhatYouGet";
-
-
-import Appbar          from "@/components/Layouts/Navbar";
-import useOtp          from "@/Hooks/useOtp";
-
-/* ---- icons ---- */
-import PlayerIcon     from "@/assets/Form/Join/Player.png";
-import VolunteerIcon  from "@/assets/Form/Join/Volunteer.png";
-import OrganizerIcon  from "@/assets/Form/Join/Organizer.png";
-import ContentIcon    from "@/assets/Form/Join/Content.png";
-import SupporterIcon  from "@/assets/Form/Join/Supporter.png";
-
-import men        from "@/assets/Form/men.png";
-import women      from "@/assets/Form/woman.png";
-import otherIcon  from "@/assets/Form/other.png";
-import menR       from "@/assets/Form/menR.png";
-import womenR     from "@/assets/Form/womanR.png";
-import otherR     from "@/assets/Form/otherR.png";
+import men from "@/assets/Form/men.png";
+import women from "@/assets/Form/woman.png";
+import otherIcon from "@/assets/Form/other.png";
+import menR from "@/assets/Form/menR.png";
+import womenR from "@/assets/Form/womanR.png";
+import otherR from "@/assets/Form/otherR.png";
+import {REGISTER_URL} from "@/config";
 
 import TargetLogo from "@/assets/Form/Join/Target.png";
-import WhatsApp   from "@/assets/Form/Join/w1.png";
+import WhatsApp from "@/assets/Form/Join/w1.png";
 
-/* ──────── types ───────────────────────────────────────────────────── */
 type Gender = "male" | "female" | "other";
 
 interface JoinAs {
@@ -48,18 +43,17 @@ interface FormState {
   joinAs: string[];
 }
 
-/* ──────── constants ───────────────────────────────────────────────── */
+
 const JOIN_AS_OPTIONS: readonly JoinAs[] = [
-  { id: "player",          label: "Player",          icon: PlayerIcon    },
-  { id: "volunteer",       label: "Volunteer",       icon: VolunteerIcon },
-  { id: "organizer",       label: "Organizer",       icon: OrganizerIcon },
-  { id: "content_creator", label: "Content Creator", icon: ContentIcon   },
-  { id: "supporter",       label: "Supporter",       icon: SupporterIcon },
+  { id: "player", label: "Player", icon: PlayerIcon },
+  { id: "volunteer", label: "Volunteer", icon: VolunteerIcon },
+  { id: "organizer", label: "Organizer", icon: OrganizerIcon },
+  { id: "content_creator", label: "Content Creator", icon: ContentIcon },
+  { id: "supporter", label: "Supporter", icon: SupporterIcon },
 ] as const;
 
 const GENDERS: readonly Gender[] = ["male", "female", "other"];
 
-/* :–– map friendly icon look-ups –––––––––––––––––––––––––––––––––––– */
 const genderIcon: Record<Gender, string> = {
   male: men,
   female: women,
@@ -98,15 +92,15 @@ const Join = () => {
     joinAs: [],
   });
 
-  const [loading,   setLoading]   = useState(false);
-  const [showTY,    setShowTY]    = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showTY, setShowTY] = useState(false);
   const [formError, setFormError] = useState("");
 
   /* ---- helpers ---------------------------------------------------- */
   const setField =
     (field: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-      setForm(f => ({ ...f, [field]: e.target.value }));
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+        setForm(f => ({ ...f, [field]: e.target.value }));
 
   const setGender =
     (g: Gender) => () => setForm(f => ({ ...f, gender: g }));
@@ -162,12 +156,12 @@ const Join = () => {
 
   const preloadForm = (u: any) => {
     setForm({
-      name:     u?.name    ?? "",
-      dob:      u?.dob     ?? "",
+      name: u?.name ?? "",
+      dob: u?.dob ?? "",
       locality: u?.address ?? "",
-      email:    u?.email   ?? "",
-      gender:   (u?.gender ?? "male") as Gender,
-      joinAs:   u?.join_as ? String(u.join_as).split(",") : [],
+      email: u?.email ?? "",
+      gender: (u?.gender ?? "male") as Gender,
+      joinAs: u?.join_as ? String(u.join_as).split(",") : [],
     });
   };
 
@@ -199,7 +193,7 @@ const Join = () => {
     }
 
     const birth = new Date(form.dob);
-    const now   = new Date();
+    const now = new Date();
 
     if (birth > now) {
       toast.error("DOB cannot be in the future");
@@ -218,7 +212,7 @@ const Join = () => {
     try {
       setLoading(true);
       await axios.post(
-        "https://hswf.network/api/register",
+        `${REGISTER_URL}`,
         {
           name: form.name,
           email: form.email,
@@ -312,8 +306,8 @@ const Join = () => {
       )}
 
       <Information />
-   
-   
+
+
     </>
   );
 };
@@ -433,9 +427,8 @@ const FormCard = ({
                   alt={g}
                 />
                 <span
-                  className={`mt-1 text-base ${
-                    form.gender === g ? "text-red-600" : "text-black"
-                  }`}
+                  className={`mt-1 text-base ${form.gender === g ? "text-red-600" : "text-black"
+                    }`}
                 >
                   {g[0].toUpperCase() + g.slice(1)}
                 </span>
@@ -487,10 +480,9 @@ const FormCard = ({
               type="button"
               onClick={setJoinAs(id)}
               className={`flex items-center gap-2 px-6 py-3 border rounded
-                ${
-                  form.joinAs.includes(id)
-                    ? "border-[#e60023] bg-white"
-                    : "border-[#E4E4E4] bg-[#FAFAFA]"
+                ${form.joinAs.includes(id)
+                  ? "border-[#e60023] bg-white"
+                  : "border-[#E4E4E4] bg-[#FAFAFA]"
                 }`}
             >
               <img src={icon} className="w-5 h-5" alt={label} />
