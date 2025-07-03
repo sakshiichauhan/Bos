@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import axios   from "axios";
 import { toast } from "sonner";
 import { useLocation }     from "react-router-dom";
-import RenderInput     from "@/Pages/Components/RenderInput";
-import Button          from "@/Pages/Components/Button";
-import VerificationCode from "@/Pages/Components/VerificationCard";
-import ThankYou        from "@/Pages/Components/ThankYou";
-import WhatYouGet      from "@/Pages/Components/WhatYouGet";
+import RenderInput     from "@/pages/Components/RenderInput";
+import Button          from "@/pages/Components/Button";
+import VerificationCode from "@/pages/Components/VerificationCard";
+import ThankYou        from "@/pages/Components/ThankYou";
+import WhatYouGet      from "@/pages/Components/WhatYouGet";
 
 
 import Appbar          from "@/components/Layouts/Navbar";
-import useOtp          from "@/Hooks/useOtp";
+import useOtp          from "@/hooks/useOtp";
 
 /* ---- icons ---- */
 import PlayerIcon     from "@/assets/Form/Join/Player.png";
@@ -19,7 +19,7 @@ import VolunteerIcon  from "@/assets/Form/Join/Volunteer.png";
 import OrganizerIcon  from "@/assets/Form/Join/Organizer.png";
 import ContentIcon    from "@/assets/Form/Join/Content.png";
 import SupporterIcon  from "@/assets/Form/Join/Supporter.png";
-import { DynamicCard } from "@/Pages/Components";
+import { DynamicCard } from "@/pages/Components";
 import men        from "@/assets/Form/men.png";
 import women      from "@/assets/Form/woman.png";
 import otherIcon  from "@/assets/Form/other.png";

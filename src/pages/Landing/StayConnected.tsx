@@ -3,8 +3,8 @@ import type { FormEvent } from "react";
 import { toast, Toaster } from "sonner";
 import axios from "axios";
 
-import Button from "@/Pages/Components/Button";
-import ThankYou from "@/Pages/Components/ThankYou";
+import Button from "@/pages/Components/Button";
+import ThankYou from "@/pages/Components/ThankYou";
 
 const isValidTenDigitNumber = (input: string) => /^\d{10}$/.test(input);
 

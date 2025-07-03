@@ -1,7 +1,7 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import calendarIcon from "@/assets/Icons/calenderIcon.png";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 interface EventCardProps {
   image: string;
@@ -24,7 +24,7 @@ const EventCard = ({
 
   return (
     <div className="flex justify-center mb-6">
-      <div className="w-[320px] rounded-[16px] bg-white border-[2px] border-black/10 shadow-[0_8px_20px_rgba(0,0,0,0.1)] flex flex-col overflow-hidden justify-between relative mb-6">
+      <div className="w-[320px] h-[400px] rounded-[16px] bg-white border-[2px] border-black/10 shadow-[0_8px_20px_rgba(0,0,0,0.1)] flex flex-col overflow-hidden justify-between relative mb-6">
         {/* Image */}
         <img src={image} alt={title} />
 
@@ -53,7 +53,7 @@ const EventCard = ({
           </p>
 
           {/* Button */}
-          <div className="relative left-[50px] bottom-[-2px] p-[2px] rounded-t-[24px]">
+          <div className="flex justify-center left-[50px] bottom-[-2px] p-[2px] rounded-t-[24px]">
             <Button
               onClick={() =>
                 navigate("/register", {

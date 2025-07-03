@@ -1,9 +1,7 @@
-
-
 import { Link } from 'react-router-dom';
 
 import logo from "@/assets/LandingPage/Welfare/WellfareLogo.png";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 
 const WelfareFoundation = () => {
   return (

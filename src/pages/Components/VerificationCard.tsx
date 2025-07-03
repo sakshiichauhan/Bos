@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 import verifyIcon from "@/assets/Icons/verify.png";
 
 type Props = {

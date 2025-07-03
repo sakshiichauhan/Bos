@@ -1,5 +1,5 @@
 import stadiumImg from "@/assets/LandingPage/HeroSection/HeroBackground.jpg";
-import Button from "@/Pages/Components/Button";
+import Button from "@/pages/Components/Button";
 import fitLogo from "@/assets/LandingPage/HeroSection/FIT.jpg";
 import nitiLogo from "@/assets/LandingPage/HeroSection/NITI.png";
 import Navbar from "@/components/Layouts/Navbar";

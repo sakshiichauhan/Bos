@@ -3,11 +3,11 @@ import type { ChangeEvent,FormEvent } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 
-import RenderInput from "@/Pages/Components/RenderInput";
-import Button from "@/Pages/Components/Button";
-import VerificationCode from "@/Pages/Components/VerificationCard";
-import ThankYou from "@/Pages/Components/ThankYou";
-import useOtp from "@/Hooks/useOtp";
+import RenderInput from "@/pages/Components/RenderInput";
+import Button from "@/pages/Components/Button";
+import VerificationCode from "@/pages/Components/VerificationCard";
+import ThankYou from "@/pages/Components/ThankYou";
+import useOtp from "@/hooks/useOtp";
 
 /* 🔗  ICON FILES  ───────────────────────────────────────────── */
 import titleIcon   from "@/assets/Icons/SponsorForm/img1.png";
