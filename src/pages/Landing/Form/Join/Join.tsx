@@ -21,7 +21,7 @@ import otherIcon from "@/assets/Form/other.png";
 import menR from "@/assets/Form/menR.png";
 import womenR from "@/assets/Form/womanR.png";
 import otherR from "@/assets/Form/otherR.png";
-import {REGISTER_URL} from "@/config";
+import {JOIN_URL} from "@/config";
 
 import TargetLogo from "@/assets/Form/Join/Target.png";
 import WhatsApp from "@/assets/Form/Join/w1.png";
@@ -212,7 +212,7 @@ const Join = () => {
     try {
       setLoading(true);
       await axios.post(
-        `${REGISTER_URL}`,
+        `${JOIN_URL}`,
         {
           name: form.name,
           email: form.email,

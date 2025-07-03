@@ -5,106 +5,84 @@ import Icon4 from "@/assets/Components/WhatYouGet/mo4.png";
 
 interface CardData {
   icon: string;
+  alt: string;
   lines: string[];
 }
 
 const cards: CardData[] = [
-  { icon: Icon1, lines: ["Participation Certificate"] },
-  { icon: Icon2, lines: ["Active Community"] },
-  { icon: Icon3, lines: ["Cultural Pride"] },
-  { icon: Icon4, lines: ["Access to the", "HSWF.Network"] },
+  { icon: Icon1, alt: "Certificate Icon", lines: ["Participation Certificate"] },
+  { icon: Icon2, alt: "Community Icon", lines: ["Active Community"] },
+  { icon: Icon3, alt: "Cultural Pride Icon", lines: ["Cultural Pride"] },
+  { icon: Icon4, alt: "Network Icon", lines: ["Access to the", "HSWF.Network"] },
 ];
 
 const WhatYouGet: React.FC = () => (
-  <div className="mx-auto mt-[40px]">
-    {/* Heading */}
-    <h2 className="mb-[30px] text-center font-bold text-[clamp(24px,4vw,40px)]">
+  <div className="mt-[40px] mx-auto px-4 max-w-7xl">
+    <h2 className="text-center mb-[30px] font-bold text-[clamp(24px,4vw,40px)]">
       What You Get
     </h2>
 
-    {/* Card grid */}
     <div className="flex flex-wrap gap-[24px]">
-      {cards.map(({ icon, lines }) => {
+      {cards.map(({ icon, lines, alt }) => {
         const isMultiLine = lines.length > 1;
 
         return (
           <div
             key={lines.join("-")}
-            className="
-              relative box-border flex flex-col rounded-lg
-              bg-white shadow-[0_0_10px_rgba(0,0,0,0.1)]
+            className={`
+              relative flex flex-col box-border bg-white rounded-[8px]
+              shadow-[0_0_10px_rgba(0,0,0,0.1)]
 
-              /* === width rules === */
-              flex-grow basis-full                                /* < 768 px  */
-              min-[769px]:basis-[calc(50%_-_20px)]                /* 769 – 1440 */
-              min-[1441px]:basis-[calc(25%_-_20px)]               /* > 1440    */
+              flex-grow basis-full                             /* Mobile default */
+              min-[769px]:basis-[calc(50%_-_12px)]             /* 2 per row at 769–1440px */
+              min-[1441px]:basis-[calc(25%_-_18px)]            /* 4 per row */
 
-              /* === padding & alignment === */
-              pt-[28px] pb-[16px] px-[11px] text-center           /* phones */
-              min-[769px]:pt-[64px] min-[769px]:pb-[32px]
-              min-[769px]:px-[32px] min-[769px]:text-left         /* tablet+ */
-              mb-[16px] min-[769px]:mb-0
-              items-center min-[769px]:items-start
-            "
+              pt-[64px] pb-[32px] px-[32px]                    /* Default padding */
+              max-[768px]:pt-[28px] max-[768px]:pb-[16px] max-[768px]:px-[11px]
+
+              text-left items-start                            /* Default alignment */
+              max-[768px]:text-center max-[768px]:items-center
+            `}
           >
             {/* Icon */}
             <img
               src={icon}
-              alt=""
-              className="
-                absolute -top-[30px]
-                left-1/2 -translate-x-1/2                      /* phones */
-                min-[769px]:left-0 min-[769px]:translate-x-0   /* tablet+ */
-                w-[clamp(64px,30vw,96px)]                      /* phones+tablets */
-                min-[769px]:w-[clamp(64px,20vw,128px)]         /* tablet+ */
-              "
+              alt={alt}
+              className={`
+                absolute top-[-30px] left-0
+                w-[clamp(64px,20vw,128px)]
+                max-[768px]:left-1/2 max-[768px]:-translate-x-1/2
+                max-[768px]:w-[clamp(64px,30vw,96px)]
+              `}
             />
 
-            {/* Text lines */}
-            {isMultiLine ? (
-              <>
-                {/* Single-line version — phones & tablets */}
-                <p
-                  className="
-                    font-semibold
-                    text-[clamp(16px,4vw,20px)] min-[769px]:text-[clamp(16px,3vw,24px)]
-                    whitespace-nowrap block
-                    min-[1441px]:hidden
-                  "
-                >
-                  {lines.join(" ")} {/* “Access to the HSWF.Network” */}
-                </p>
+            {/* Text */}
+            <div className="mt-[33px]">
+              {isMultiLine ? (
+                <>
+                  {/* Mobile: show as one line */}
+                  <p className="font-semibold block max-[768px]:inline text-[clamp(16px,4vw,20px)] sm:hidden">
+                    {lines.join(" ")}
+                  </p>
 
-                {/* Two-line version — desktops (≥ 1441 px) */}
-                <div className="hidden min-[1441px]:flex min-[1441px]:flex-col">
-                  {lines.map((txt, i) => (
-                    <p
-                      key={i}
-                      className="
-                        font-semibold
-                        text-[clamp(16px,4vw,20px)] min-[769px]:text-[clamp(16px,3vw,24px)]
-                        inline-block
-                      "
-                    >
-                      {txt}
-                    </p>
-                  ))}
-                </div>
-              </>
-            ) : (
-              lines.map((txt, i) => (
-                <p
-                  key={i}
-                  className="
-                    font-semibold
-                    text-[clamp(16px,4vw,20px)] min-[769px]:text-[clamp(16px,3vw,24px)]
-                    inline-block
-                  "
-                >
-                  {txt}
+                  {/* Tablet/Desktop: stacked lines */}
+                  <div className="hidden sm:flex sm:flex-col">
+                    {lines.map((line, i) => (
+                      <p
+                        key={i}
+                        className="font-semibold text-[clamp(16px,3vw,24px)]"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="font-semibold text-[clamp(16px,3vw,24px)]">
+                  {lines[0]}
                 </p>
-              ))
-            )}
+              )}
+            </div>
           </div>
         );
       })}

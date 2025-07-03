@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
       } px-[clamp(16px,10vw,240px)] md:px-[clamp(40px,15vw,240px)]`}
     >
       <div className="flex justify-between items-center flex-wrap w-full">
-        {/* Logo */}
+
         <Link to="/" className="">
           <img
             src={Logo}
