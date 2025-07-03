@@ -1,19 +1,17 @@
-
 import { useNavigate } from 'react-router-dom';
+import Button from '@/Pages/Components/Button';
+import WhatYouGet from '@/Pages/Components/WhatYouGet';
 
-import Button from "@/Pages/Components/Button";
-import WhatYouGet from "@/Pages/Components/WhatYouGet";
-
-import im1 from "@/assets/LandingPage/JoinTheMovement/img1.png";
-import im2 from "@/assets/LandingPage/JoinTheMovement/img5.png";
-import im3 from "@/assets/LandingPage/JoinTheMovement/img2.png";
-import im4 from "@/assets/LandingPage/JoinTheMovement/img3.png";
-import im5 from "@/assets/LandingPage/JoinTheMovement/img4.png";
-import im1F from "@/assets/LandingPage/JoinTheMovement/im1F.png";
-import im2F from "@/assets/LandingPage/JoinTheMovement/im5F.png";
-import im3F from "@/assets/LandingPage/JoinTheMovement/im2F.png";
-import im4F from "@/assets/LandingPage/JoinTheMovement/im3F.png";
-import im5F from "@/assets/LandingPage/JoinTheMovement/im4F.png";
+import im1 from '@/assets/LandingPage/JoinTheMovement/img1.png';
+import im2 from '@/assets/LandingPage/JoinTheMovement/img5.png';
+import im3 from '@/assets/LandingPage/JoinTheMovement/img2.png';
+import im4 from '@/assets/LandingPage/JoinTheMovement/img3.png';
+import im5 from '@/assets/LandingPage/JoinTheMovement/img4.png';
+import im1F from '@/assets/LandingPage/JoinTheMovement/im1F.png';
+import im2F from '@/assets/LandingPage/JoinTheMovement/im5F.png';
+import im3F from '@/assets/LandingPage/JoinTheMovement/im2F.png';
+import im4F from '@/assets/LandingPage/JoinTheMovement/im3F.png';
+import im5F from '@/assets/LandingPage/JoinTheMovement/im4F.png';
 
 interface CardData {
   id: string;
@@ -23,7 +21,7 @@ interface CardData {
   imgLg: string;
   imgSm: string;
   cta: string;
-  big?: boolean;
+  contentMaxWidth?: string;
 }
 
 const CARDS: CardData[] = [
@@ -31,47 +29,50 @@ const CARDS: CardData[] = [
     id: 'player',
     label: 'Join as a',
     title: 'Player',
-    subtitle: 'Your game. Your ground. Your story.',
+    subtitle: 'Compete in events and represent your community',
     imgLg: im1,
     imgSm: im1F,
     cta: 'Join as a Player',
+    contentMaxWidth: 'max-w-[300px]',
   },
   {
     id: 'creator',
     label: 'Join as a',
     title: 'Content Creator',
-    subtitle: 'Capture. Share. Inspire',
+    subtitle: 'Capture and share stories from the field',
     imgLg: im3,
     imgSm: im3F,
     cta: 'Join as a Content Creator',
+    contentMaxWidth: 'max-w-[300px]',
   },
   {
     id: 'organiser',
     label: 'Join as an',
     title: 'Organiser',
-    subtitle: 'Host. Connect. Celebrate',
+    subtitle: 'Host local events under the BOS banner',
     imgLg: im2,
     imgSm: im2F,
     cta: 'Join as an Organiser',
-    big: true,
   },
   {
     id: 'volunteer',
     label: 'Join as a',
     title: 'Volunteer',
-    subtitle: 'Support. Coordinate. Make an Impact.',
+    subtitle: 'Help us organize and execute BOS meets',
     imgLg: im4,
     imgSm: im4F,
     cta: 'Join as a Volunteer',
+    contentMaxWidth: 'max-w-[350px]',
   },
   {
     id: 'supporter',
     label: 'Join as a',
     title: 'Supporter',
-    subtitle: 'Support. Celebrate. Spread',
+    subtitle: 'Spread the message and help grow the movement',
     imgLg: im5,
     imgSm: im5F,
     cta: 'Join as a Supporter',
+    contentMaxWidth: 'max-w-[400px]',
   },
 ];
 
@@ -79,93 +80,106 @@ const JoinTheMovement = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="joinas" className="bg-[#F8F8F8] px-4 py-24 md:px-20 lg:px-36 xl:px-60">
+    <section id="joinas" className="bg-[#f8f8f8] px-4 sm:px-6 md:px-10 xl:px-[240px] py-[96px]">
       {/* Header */}
-      <div className="mb-10 text-center">
-        <h2 className="text-3xl font-bold md:text-5xl mb-2">Join The Movement</h2>
-        <p className="text-lg text-gray-600 md:text-2xl">
-          Be part of something bigger than the game.
+      <div className="text-center mb-10 space-y-2">
+        <h2 className="text-[28px] sm:text-[36px] md:text-[40px] font-bold leading-tight">
+          Join The Movement
+        </h2>
+        <p className="text-gray-600 text-[16px] sm:text-[18px] md:text-[18px]">
+          Be More Than a Spectator. Be Part of the Change
+        </p>
+        <p className="text-gray-500 text-[14px] sm:text-[16px] md:text-[16px]">
+          You can participate as:
         </p>
       </div>
 
-      {/* Grid layout */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="flex flex-col gap-6">
-          {['player', 'creator', 'volunteer'].map((key) => {
-            const card = CARDS.find((c) => c.id === key)!;
-            return <MovementCard key={card.id} {...card} onClick={navigate} />;
-          })}
+      {/* Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-[24px]">
+        <div className="flex flex-col gap-[24px]">
+          {CARDS.slice(0, 2).map((card) => (
+            <Card key={card.id} {...card} onClick={() => navigate('/join')} />
+          ))}
         </div>
-        <div className="flex flex-col gap-6">
-          {CARDS.find((c) => c.id === 'organiser') && (
-            <MovementCard
-              {...CARDS.find((c) => c.id === 'organiser')!}
-              className="min-h-[520px]"
-              onClick={navigate}
-            />
-          )}
-          {CARDS.find((c) => c.id === 'supporter') && (
-            <MovementCard {...CARDS.find((c) => c.id === 'supporter')!} onClick={navigate} />
-          )}
+
+        <Card key="organiser" {...CARDS[2]} onClick={() => navigate('/join')} />
+
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-[24px] col-span-2">
+          {CARDS.slice(3).map((card) => (
+            <Card key={card.id} {...card} onClick={() => navigate('/join')} />
+          ))}
         </div>
       </div>
 
-      {/* Additional Section */}
-      <WhatYouGet />
+      <div className="mt-16">
+        <WhatYouGet />
+      </div>
     </section>
   );
 };
 
 export default JoinTheMovement;
 
-/* ─────────────── Card Component ─────────────── */
-
-interface MovementCardProps extends CardData {
-  onClick: (route: string) => void;
-  className?: string;
+interface CardProps extends CardData {
+  onClick: () => void;
 }
 
-const MovementCard = ({
+const Card = ({
+  id,
   label,
   title,
   subtitle,
   imgLg,
   imgSm,
   cta,
-  big,
   onClick,
-  className = '',
-}: MovementCardProps) => (
-  <div
-    className={`relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-md
-                p-8 lg:p-10 lg:flex-row ${big ? 'lg:items-end' : 'lg:items-center'} ${className}`}
-  >
-    {/* Text */}
-    <div className={`z-10 flex flex-col space-y-2 ${big ? 'max-w-md' : 'max-w-sm'}`}>
-      <span className="text-base font-medium bg-gradient-text md:text-lg">{label}</span>
-      <h3 className="text-2xl font-semibold text-gray-900 md:text-3xl">{title}</h3>
-      <p className="text-sm text-gray-600 md:text-base">{subtitle}</p>
-      <div className="pt-4 md:pt-6">
-        <Button
-          text={cta}
-          onClick={() => onClick('/join')}
-          className="px-6 py-3 text-sm md:text-base"
-        />
-      </div>
-    </div>
+  contentMaxWidth = '',
+}: CardProps) => {
+  const isOrganiser = id === 'organiser';
 
-    {/* Image */}
-    <picture
-      className={`pointer-events-none select-none lg:absolute ${
-        big ? 'right-0 top-9 max-h-[440px]' : 'bottom-0 right-0 max-h-[280px]'
-      }`}
+  return (
+    <div
+      className={`relative flex bg-white rounded-[24px] shadow-md 
+        p-[32px] pt-[74px] gap-6 items-center 
+        flex-col xl:flex-row ${isOrganiser ? 'xl:items-end' : 'xl:items-center'}`}
     >
-      <source media="(min-width:1250px)" srcSet={imgLg} />
-      <img
-        src={imgSm}
-        alt={title}
-        className="h-auto w-full max-w-[300px] object-contain"
-      />
-    </picture>
-  </div>
-);
+      {/* Text */}
+      <div className={`flex flex-col space-y-2 ${contentMaxWidth}`}>
+        <span className="text-[16px] font-normal bg-linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) text-transparent bg-clip-text">
+          {label}
+        </span>
+        <h3 className="text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111827] leading-snug">
+          {title}
+        </h3>
+        <p className="text-[14px] sm:text-[16px] md:text-[16px] text-gray-600 leading-snug">
+          {subtitle}
+        </p>
+        <div className="pt-3">
+          <Button
+            text={cta}
+            onClick={onClick}
+            className="px-[16px] py-[10px] border-[1.5px] border-purple-600 text-[20px] sm:text-[15px] md:text-[15px] font-semibold hover:shadow-md transition"
+          />
+        </div>
+      </div>
+
+      {/* Image */}
+      <picture
+        className={`pointer-events-none select-none absolute ${
+          isOrganiser ? 'top-[36.72px] right-0' : 'bottom-0 right-0'
+        }`}
+      >
+        <source media="(min-width:1250px)" srcSet={imgLg} />
+        <img
+          src={imgSm}
+          alt={title}
+          className={`${
+            isOrganiser
+              ? 'w-[637px] h-[446.28px] rounded-[18px] border-[4px] border-white'
+              : 'max-h-[280px] w-auto'
+          } object-contain`}
+        />
+      </picture>
+    </div>
+  );
+};

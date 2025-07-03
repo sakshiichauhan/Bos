@@ -1,16 +1,14 @@
 
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Appbar from "@/components/Layouts/Navbar";
 
-import Button from "@/Pages/Components/Button";
-import LogoCard from "@/Pages/Landing/SponsorLogos";
-import VerificationCode from "@/Pages/Components/VerificationCard";
-import ThankYou from "@/Pages/Components/ThankYou";
-import useOtp from "@/Hooks/useOtp";
+
+import Logo from "@/Pages/Landing/Form/Sponsor/LogoCards"
+
 import SponsorshipCards from "@/Pages/Landing/Form/Sponsor/Sponsorship";
 import SponsorForm from "@/Pages/Landing/Form/Sponsor/SponsorForm";
-
+import LetsTalk from "@/Pages/Landing/Form/Sponsor/LetsTalk";
 import eduIcon from "@/assets/Form/Sponsor/SponsorFlag.png";
 import cultureIcon from "@/assets/Form/Sponsor/SponsorAuthentic.png";
 import govIcon from "@/assets/Form/Sponsor/SponsorCsr.png";
@@ -40,89 +38,6 @@ const partners = [
 ];
 
 
-const RegisterForEvent: React.FC = () => {
-  const [mobile, setMobile] = useState('');
-  const [showTY, setShowTY] = useState(false);
-  const { otpSent, verified, verifying, error, sendOtp, verifyOtp, reset } =
-    useOtp();
-
-  const cleanUp = () => {
-    reset();
-    setShowTY(false);
-    setMobile('');
-  };
-
-  if (verified && !showTY)
-    return (
-      <ThankYou
-        onClose={() => setShowTY(true)}
-        title="You’re verified!"
-        subtitle="Our team will contact you shortly."
-      />
-    );
-
-  if (showTY)
-    return (
-      <ThankYou
-        onClose={cleanUp}
-        title="Thank You!"
-        subtitle="We’ve received your details."
-      />
-    );
-
-  if (otpSent && !verified)
-    return (
-      <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-        <VerificationCode
-          phoneNumber={`+91 ${mobile}`}
-          onVerify={otp => verifyOtp(mobile, otp)}
-          onResend={() => sendOtp(mobile)}
-          onChangeNumber={cleanUp}
-          loading={verifying}
-          error={error}
-        />
-      </div>
-    );
-
-  return (
-    <section
-      className="border border-gray-200 rounded-xl bg-white px-4 py-8
-                 w-full sm:px-6 md:px-10
-                 md:max-w-[80%] lg:max-w-[65%] mx-auto my-16"
-    >
-      <h1 className="text-3xl font-semibold mb-8 text-left">Register For Event</h1>
-
-      <p className="mb-10 text-left text-lg">
-        Please enter a 10-digit valid mobile number to receive OTP
-      </p>
-
-      <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
-        <span className="shrink-0 text-lg font-medium">+91</span>
-        <input
-          type="tel"
-          maxLength={10}
-          required
-          value={mobile}
-          onChange={e =>
-            setMobile(e.target.value.replace(/\D/g, '').slice(0, 10))
-          }
-          placeholder="Enter Mobile Number"
-          className="flex-1 h-[68px] bg-[#F8F8F8] px-4 border border-[#F8F8F8] rounded-md
-                     focus:outline-none text-[20px] text-gray-600 placeholder:text-[#434343]"
-        />
-      </div>
-
-      {error && <p className="text-red-600 font-medium mb-4">{error}</p>}
-
-      <Button
-        type="button"
-        disabled={!/^\d{10}$/.test(mobile) || verifying}
-        onClick={() => sendOtp(mobile)}
-        text={verifying ? 'Sending OTP…' : 'Generate OTP'}
-      />
-    </section>
-  );
-};
 
 const Sponsor: React.FC = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -233,7 +148,8 @@ const Sponsor: React.FC = () => {
       </section>
 <SponsorshipCards/>
   <SponsorForm/>
-      <LogoCard />
+     <Logo/>
+      <LetsTalk/>
      
     
     </>
