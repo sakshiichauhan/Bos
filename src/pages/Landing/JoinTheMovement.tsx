@@ -143,11 +143,9 @@ const Card = ({
         p-[32px] pt-[74px] gap-6 items-center 
         flex-col xl:flex-row ${isOrganiser ? 'xl:items-end' : 'xl:items-center'}`}
     >
-      {/* Text */}
       <div className={`flex flex-col space-y-2 ${contentMaxWidth}`}>
         <span
-          className="text-[20px] font-bold "
-          style={{ background: "linear-gradient(to right, #DF0024 0%, #FC9F0B 16%, #FFCD00 33%, #3BB402 50%, #0085C7 66%, #4F449D 100%) bg-clip-text text-transparent" }}
+          className="w-[100px] text-[20px] font-bold bg-gradient-to-r from-red-600 via-orange-300 via-yellow-300 via-green-500 via-blue-700 via-indigo-800 to-violet-900 bg-clip-text text-transparent"
         >
           {label}
         </span>
@@ -162,26 +160,24 @@ const Card = ({
             text={cta}
             onClick={onClick}
             className='leading-tighter'
-            // className="px-[16px] py-[10px] border-[1.5px] border-purple-600 text-[20px] sm:text-[15px] md:text-[15px] font-semibold hover:shadow-md transition"
+          // className="px-[16px] py-[10px] border-[1.5px] border-purple-600 text-[20px] sm:text-[15px] md:text-[15px] font-semibold hover:shadow-md transition"
           />
         </div>
       </div>
 
       {/* Image */}
       <picture
-        className={`pointer-events-none select-none absolute ${
-          isOrganiser ? 'top-[36.72px] right-0' : 'bottom-0 right-0'
-        }`}
+        className={`pointer-events-none select-none absolute ${isOrganiser ? 'top-[36.72px] right-0' : 'bottom-0 right-0'
+          }`}
       >
         <source media="(min-width:1250px)" srcSet={imgLg} />
         <img
           src={imgSm}
           alt={title}
-          className={`${
-            isOrganiser
-              ? 'w-[637px] h-[446.28px] rounded-[18px] border-[4px] border-transparent '
-              : 'max-h-[280px] w-auto'
-          } object-contain`}
+          className={`${isOrganiser
+            ? 'w-[637px] h-[446.28px] rounded-[18px] border-[4px] border-transparent '
+            : 'max-h-[280px] w-auto'
+            } object-contain`}
         />
       </picture>
     </div>
