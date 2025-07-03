@@ -328,3 +328,18 @@ body {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+.rainbow-text {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

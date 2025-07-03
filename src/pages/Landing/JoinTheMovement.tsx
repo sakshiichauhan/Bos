@@ -145,13 +145,16 @@ const Card = ({
     >
       {/* Text */}
       <div className={`flex flex-col space-y-2 ${contentMaxWidth}`}>
-        <span className="text-[20px] font-bold bg-gradient-to-r via-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-violet-500 text-transparent bg-clip-text">
+        <span
+          className="text-[20px] font-bold "
+          style={{ background: "linear-gradient(to right, #DF0024 0%, #FC9F0B 16%, #FFCD00 33%, #3BB402 50%, #0085C7 66%, #4F449D 100%) bg-clip-text text-transparent" }}
+        >
           {label}
         </span>
         <h3 className="text-[24px] sm:text-[28px] md:text-[32px] font-semibold text-[#111827] leading-snug">
           {title}
         </h3>
-        <p className="text-[14px] sm:text-[16px] md:text-[16px] text-gray-600 leading-snug">
+        <p className="text-[14px] font-normal sm:text-[16px] md:text-[16px] text-[#4B4B4B] leading-snug">
           {subtitle}
         </p>
         <div className="pt-3">
