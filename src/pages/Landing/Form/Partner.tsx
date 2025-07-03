@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { useEffect, useState, ChangeEvent, FormEvent } from "react";
-import Footer from "@/components/Layouts/Footer";
+import { useEffect, useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
+
 import Appbar from "@/components/Layouts/Navbar";
 import RenderInput from "@/Pages/Components/RenderInput";
 import Button from "@/Pages/Components/Button";
@@ -105,9 +106,8 @@ function PartnerBond() {
   );
 }
 
-// ╭────────────────────────────────────────────────────────────────────────╮
-// │  1 ▸ Phone + OTP                                                      │
-// ╰────────────────────────────────────────────────────────────────────────╯
+
+
 interface RegisterForEventProps {
   onVerified: (mobile: string) => void;
 }

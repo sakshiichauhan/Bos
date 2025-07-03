@@ -11,6 +11,7 @@ export interface RenderInputProps {
   onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
   className?: string;
   required?: boolean;
+  max?: string; // <-- add this line
 }
 
 const RenderInput: React.FC<RenderInputProps> = ({
@@ -24,6 +25,7 @@ const RenderInput: React.FC<RenderInputProps> = ({
   onChange,
   className = "",
   required = false,
+  max, // <-- add this line
 }) => (
   <div className={`relative w-full mx-auto mb-5 ${className}`}>
     {/* floating label */}
@@ -63,6 +65,7 @@ const RenderInput: React.FC<RenderInputProps> = ({
         placeholder={placeholder}
         maxLength={maxLength}
         required={required}
+        max={max} // <-- add this line
         className="w-full h-[68px] bg-[#F8F8F8] px-4 border border-[#F8F8F8] rounded-md focus:outline-none text-gray-500 text-lg placeholder:text-[#434343]"
       />
     )}

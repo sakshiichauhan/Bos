@@ -1,4 +1,5 @@
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState } from "react";
+import type { ChangeEvent,FormEvent } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 
@@ -129,11 +130,7 @@ const SponsorForm = () => {
     );
   }
 
-  /* ─── early return : OTP screen (before verified) ───────── */
 
-
-      {/* 📱 phone-number card – same design as main form */}
-  /* ─── early return : OTP screen (before verified) ───────── */
 if (!verified) {
   return (
     <>
