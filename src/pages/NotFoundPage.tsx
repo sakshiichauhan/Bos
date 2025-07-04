@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 const NotFound: FC = () => {
   const navigate = useNavigate();
