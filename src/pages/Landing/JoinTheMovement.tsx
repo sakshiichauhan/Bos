@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '@/pages/Components/Button';
-import WhatYouGet from '@/pages/Components/WhatYouGet';
+
 
 import im1 from '@/assets/LandingPage/JoinTheMovement/img1.png';
 import im2 from '@/assets/LandingPage/JoinTheMovement/img5.png';
@@ -33,7 +33,7 @@ const CARDS: CardData[] = [
     imgLg: im1,
     imgSm: im1F,
     cta: 'Join as a Player',
-    contentMaxWidth: 'max-w-[300px]',
+    contentMaxWidth: 'max-w-[780px]',
   },
   {
     id: 'creator',
@@ -43,7 +43,7 @@ const CARDS: CardData[] = [
     imgLg: im3,
     imgSm: im3F,
     cta: 'Join as a Creator',
-    contentMaxWidth: 'max-w-[300px]',
+    contentMaxWidth: 'max-w-[780px]',
   },
   {
     id: 'organiser',
@@ -63,11 +63,11 @@ const CARDS: CardData[] = [
     imgLg: im4,
     imgSm: im4F,
     cta: 'Join as a Volunteer',
-    contentMaxWidth: 'max-w-[300px]',
+    contentMaxWidth: 'max-w-[780px]',
   },
   {
     id: 'supporter',
-    label: 'Join as a',
+    label: 'Join as an',
     title: 'Supporter',
     subtitle: 'Support. Celebrate. Spread',
     imgLg: im5,
@@ -88,12 +88,10 @@ const JoinTheMovement = () => {
           <h2 className="text-[28px] sm:text-[36px] md:text-[40px] xl:text-[48px] font-bold leading-tight">
             Join The Movement
           </h2>
-          <p className="text-[16px] sm:text-[18px] md:text-[18px] text-gray-600">
+          <p className="text-[16px] sm:text-[18px] md:text-[18px] lg:text-[24px] text-[#000000] font-medium">
             Be part of something bigger than the game.
           </p>
-          <p className="text-[14px] sm:text-[16px] md:text-[16px] text-gray-500">
-            You can participate as:
-          </p>
+
         </div>
 
         {/* Grid */}
@@ -106,16 +104,14 @@ const JoinTheMovement = () => {
 
           <Card key="organiser" {...CARDS[2]} onClick={() => navigate('/join')} />
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-[24px] xl:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-[24px] xl:col-span-2">
             {CARDS.slice(3).map((card) => (
               <Card key={card.id} {...card} onClick={() => navigate('/join')} />
             ))}
           </div>
         </div>
 
-        <div className="mt-16">
-          <WhatYouGet />
-        </div>
+     
       </div>
     </section>
   );
@@ -129,7 +125,7 @@ interface CardProps extends CardData {
 
 const Card = ({
   id,
-  label,
+
   title,
   subtitle,
   imgLg,
@@ -142,31 +138,48 @@ const Card = ({
 
   return (
     <div
-      className={`relative flex flex-col bg-white rounded-[24px] shadow-md 
-        p-4 sm:p-6 md:p-[24px] 
-        xl:flex-row xl:gap-6 xl:items-center xl:pt-[64px] xl:px-[24px]
-        2xl:pt-[74px] 2xl:px-[32px]
-        ${isOrganiser ? 'xl:items-end' : ''} text-left xl:text-left`}
+      className={`relative bg-white rounded-[24px] shadow-md flex flex-col 
+      p-4 sm:p-6 md:p-8 xl:flex-row xl:items-center xl:gap-[24px] 
+      xl:px-[24px] xl:pt-[64px] 2xl:px-[32px] 2xl:pt-[74px] 
+      ${isOrganiser ? 'xl:items-end' : ''} overflow-hidden`}
     >
-      {/* Text */}
-      <div className={`flex flex-col space-y-2 ${contentMaxWidth}`}>
-        <span className="text-[16px] sm:text-[18px] xl:text-[20px] font-bold bg-gradient-to-r from-red-600 via-orange-300 via-yellow-300 via-green-500 via-blue-700 via-indigo-800 to-violet-900 bg-clip-text text-transparent">
-          {label}
-        </span>
-        <h3 className="text-[24px] sm:text-[28px] md:text-[32px] xl:text-[32px] font-semibold text-[#111827] leading-snug">
+      {/* Mobile/Tablet Image */}
+      <div className="block xl:hidden mb-4">
+        <picture>
+          <img
+            src={imgSm}
+            alt={title}
+            className="w-full max-h-[300px] object-contain mx-auto"
+          />
+        </picture>
+      </div>
+
+      {/* Text content */}
+      <div className={`flex flex-col ${contentMaxWidth} space-y-2`}>
+      <span
+  className="text-[16px] sm:text-[18px] xl:text-[20px] font-normal bg-clip-text text-transparent"
+  style={{
+    backgroundImage:
+      'linear-gradient(to right, red 0%, orange 15%, yellow 25%, green 35%, blue 40%, indigo 60%, violet 80%)',
+  }}
+>
+  Join as a
+</span>
+
+        <h3 className="text-[24px] sm:text-[28px] xl:text-[32px] font-semibold text-[#111827]">
           {title}
         </h3>
-        <p className="text-[14px] sm:text-[16px] md:text-[16px] xl:text-[18px] text-[#4B4B4B] leading-snug">
+        <p className="text-[14px] sm:text-[16px] xl:text-[18px] text-[#4B4B4B]">
           {subtitle}
         </p>
         <div className="pt-3">
-          <Button text={cta} onClick={onClick} className="leading-tight" />
+          <Button text={cta} onClick={onClick} className="w-fit text-[16px] px-4 py-2" />
         </div>
       </div>
 
       {/* Desktop Image */}
       <picture
-        className={`pointer-events-none select-none hidden xl:block absolute ${
+        className={`pointer-events-none hidden xl:block absolute ${
           isOrganiser ? 'top-[36px] right-0' : 'bottom-0 right-0'
         }`}
       >
@@ -175,19 +188,8 @@ const Card = ({
           src={imgSm}
           alt={title}
           className={`object-contain rounded-[18px] ${
-            isOrganiser
-              ? 'w-[637px] h-[446px]'
-              : 'max-h-[260px] w-[300px]'
+            isOrganiser ? 'w-[708px] h-[400px]' : 'max-h-[200px] w-[160px]'
           }`}
-        />
-      </picture>
-
-      {/* Mobile/Tablet Image */}
-      <picture className="block xl:hidden mt-4 w-full">
-        <img
-          src={imgSm}
-          alt={title}
-          className="mx-auto max-w-full max-h-[300px] object-contain"
         />
       </picture>
     </div>

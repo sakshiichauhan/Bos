@@ -30,32 +30,32 @@ const UpcomingEventHorizontalCard = ({
 
   return (
     <div
-      className="flex flex-col lg:flex-row bg-white rounded-2xl shadow-md overflow-hidden max-w-[1160px] mx-auto mb-12 border-2 border-transparent h-auto lg:h-[390px]"
+      className="flex flex-col lg:flex-row bg-white rounded-2xl shadow-md overflow-hidden max-w-[1160px] mx-auto mb-12 border-2 border-transparent h-auto lg:h-[393px]"
       id="BOS"
     >
       <img
         src={image}
         alt={title}
-        className="w-full lg:w-[390px] h-[300px] lg:h-[390px] object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"
+        className="w-full lg:w-[393px] h-[300px] lg:h-[393px] object-cover rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none"
       />
       <div className="p-6 lg:p-8 flex flex-col justify-center flex-1">
-        <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full inline-block mb-2 w-fit">
+        <span className="text-base font-normal text-[#4B4B4B] bg-[#F8F8F8] px-3 py-1 rounded-full inline-block mb-2 w-fit">
           {label}
         </span>
-        <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-base text-gray-700 flex items-center gap-1 mb-1">
+        <h3 className="text-xl lg:text-2xl font-semibold text-[#000000] mb-2">{title}</h3>
+        <p className="text-base text-[#4B4B4B] flex items-center gap-1 mb-1">
           <FaMapMarkerAlt className="text-red-500 text-sm" />
           {location}
         </p>
-        <p className="text-base text-gray-700 flex items-center gap-1 mb-1">
+        <p className="text-base text-[#4B4B4B] flex items-center gap-1 mb-1">
           <img src={calendarIcon} alt="calendar" className="w-4 lg:w-[16px] mr-1 inline" />
           {date}
         </p>
-        <p className="text-base text-gray-700 mt-4 font-semibold">
+        <p className="text-lg text-[#4B4B4B] mt-4 font-semibold">
           Come together. Play together. Grow stronger.
         </p>
         <p
-          className="text-base text-gray-600 mt-1 leading-snug overflow-hidden text-ellipsis"
+          className="text-lg text-[#4B4B4B] mt-1 leading-snug overflow-hidden "
           style={{
             display: '-webkit-box',
             WebkitLineClamp: 2,

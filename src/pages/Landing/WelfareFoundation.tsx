@@ -22,7 +22,7 @@ const WelfareFoundation = () => {
         Brought to You by
       </h3>
 
-      <h2 className="mb-[clamp(16px,3vw,32px)] text-[clamp(32px,4vw,64px)] font-extrabold max-[764px]:text-[32px]">
+      <h2 className="mb-[clamp(16px,3vw,32px)] text-[clamp(32px,4vw,64px)] font-semibold max-[764px]:text-[32px]">
         Hardcore Sports Welfare Foundation
       </h2>
 

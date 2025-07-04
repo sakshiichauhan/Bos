@@ -77,7 +77,7 @@ const Sponsor: React.FC = () => {
           </p>
         </div>
       </section>
-
+ <SponsorForm />
       {/* ─── WHY SPONSOR GRID ─── */}
       <section className="bg-gray-100 px-4 md:px-[80px] lg:px-[120px] xl:px-[193px] py-16">
         <h2 className="text-[32px] lg:text-[48px] 2xl:text-[64px] font-semibold text-center mb-[42px]">
@@ -146,8 +146,9 @@ const Sponsor: React.FC = () => {
           ))}
         </div>
       </section>
+    
       <SponsorshipCards />
-      <SponsorForm />
+    
       <Logo />
       <LetsTalk />
 

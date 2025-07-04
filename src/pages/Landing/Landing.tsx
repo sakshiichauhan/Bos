@@ -27,14 +27,16 @@ const Landing = () => {
     }
 
     if (!events || events.length === 0) {
-      return <p className="text-center py-4">No upcoming events at the moment.</p>;
+      return (
+        <p className="text-center py-4">No upcoming events at the moment.</p>
+      );
     }
 
     if (eventsCount < 3) {
       return (
         <div className="gridContainer">
-          {events.map(event => (
-            <EventCard key={event.id} {...event} />
+          {events.map((event) => (
+            <UpcomingEventHorizontalCard key={event.id} {...event} />
           ))}
         </div>
       );
@@ -42,8 +44,8 @@ const Landing = () => {
 
     return (
       <div className="outter">
-        {events.map(event => (
-          <UpcomingEventHorizontalCard key={event.id} {...event} />
+        {events.map((event) => (
+          <EventCard key={event.id} {...event} />
         ))}
       </div>
     );
@@ -59,14 +61,14 @@ const Landing = () => {
         {renderEvents()}
       </section>
       <JoinTheMovement />
-      <SponsorLogos />
-      <WhySponser />
-      <PartnersSection />
+
       <InstaFastTrack />
       <CommunityTalks />
-      <StayConnected />
+      <PartnersSection />
+      <SponsorLogos />
+      <WhySponser />
       <WelfareFoundation />
-     
+      <StayConnected />
     </div>
   );
 };

@@ -35,9 +35,9 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[10000] transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
         scrolled
-          ? 'bg-white/10 backdrop-blur-xl shadow-sm py-[6px]'
+          ? 'bg-[#F0F0F0]  shadow-sm py-[6px]'
           : 'bg-transparent py-[clamp(12px,2vw,16px)]'
       } px-[clamp(16px,10vw,240px)] md:px-[clamp(40px,15vw,240px)]`}
     >

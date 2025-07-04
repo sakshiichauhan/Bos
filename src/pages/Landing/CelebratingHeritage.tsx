@@ -71,49 +71,51 @@ const HeritageEvents: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-[650px] flex flex-col gap-[clamp(16px,2vw,24px)] pt-[clamp(16px,3vw,32px)]">
-        <h2 className="text-[clamp(32px,4vw,48px)] font-bold text-[#111] leading-[1.2] mb-[10px]">
-          Celebrating Heritage<br />
-          <span className="font-semibold">Through Events</span>
-        </h2>
-        <h4 className="text-[clamp(18px,2vw,24px)] font-semibold text-[#222]">
-          Urban to Rural Connect
-        </h4>
-        <p className="text-[14px] lg:text-[clamp(16px,1.3vw,20px)] leading-[1.6] text-[#4B4B4B]">
-          BOS bridges the gap between generations, geographies, and lifestyles through meaningful play.
-        </p>
+   <div className="max-w-[600px] flex flex-col gap-0 pt-[clamp(16px,3vw,32px)]">
+  <h2 className="text-[clamp(32px,1vw,48px)] font-semibold text-[#000000] leading-[1.2] mb-[18px]">
+    Celebrating Heritage<br />
+    <span className="font-medium">Through Sports</span>
+  </h2>
 
-        {/* Bullet List */}
-        <ul className="list-none space-y-[clamp(8px,1.5vw,16px)]">
-          {[
-            'From Gully to Ground – Celebrating both informal and organized sports.',
-            'Inclusive by Design – Everyone can join — no kits, no labels, just play.',
-            'Stories in Motion – Every game has a legacy — BOS helps carry it forward.',
-          ].map((item, idx) => (
-            <li
-              key={idx}
-              className="flex gap-3 font-semibold text-[#4B4B4B] text-[14px] lg:text-[clamp(16px,1.3vw,20px)]"
-              style={{
-                backgroundImage: `url(${vector})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'left center',
-                backgroundSize: '20px 20px',
-                paddingLeft: '30px',
-              }}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+  <h4 className="text-[clamp(18px,4vw,24px)] font-semibold text-[#000000] mb-[6px]">
+    Urban to Rural Connect
+  </h4>
 
-        <strong className="block font-bold text-black text-[14px] lg:text-[clamp(16px,1.3vw,20px)]">
-          Discover BOS Events Around You
-        </strong>
-        <p className="text-[14px] lg:text-[clamp(16px,1.3vw,20px)] text-[#4B4B4B]">
-          Explore what’s happening nearby and get involved!
+  <p className="text-[14px] lg:text-[clamp(16px,2vw,20px)] leading-[1.5] text-[#4B4B4B] font-normal mb-[6px]">
+    BOS bridges the gap between generations, geographies, and lifestyles through meaningful play.
+  </p>
+
+  <ul className="list-none space-y-[clamp(6px,1vw,10px)]">
+    {[
+      {
+        title: "From Gully to Ground",
+        desc: "Celebrating both informal and organized sports.",
+      },
+      {
+        title: "Inclusive by Design",
+        desc: "Everyone can join — no kits, no labels, just play.",
+      },
+      {
+        title: "Stories in Motion",
+        desc: "Every game has a legacy — BOS helps carry it forward.",
+      },
+    ].map((item, idx) => (
+      <li key={idx} className="pl-[30px] relative">
+        <span
+          className="absolute left-0 top-1.5 w-[20px] h-[20px] bg-no-repeat bg-contain"
+          style={{ backgroundImage: `url(${vector})` }}
+        />
+        <p className="text-[#4B4B4B] text-[14px] lg:text-[clamp(16px,1.3vw,20px)] font-semibold">
+          {item.title}
         </p>
-      </div>
-    </section>
+        <p className="text-[#4B4B4B] text-[14px] lg:text-[clamp(16px,1.2vw,18px)] font-normal leading-snug">
+          {item.desc}
+        </p>
+      </li>
+    ))}
+  </ul>
+</div>
+   </section>
   );
 };
 

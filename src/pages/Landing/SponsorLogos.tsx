@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 import sponsor1 from "@/assets/LandingPage/Logos/lo1.png";
 import sponsor2 from "@/assets/LandingPage/Logos/lo2.png";
@@ -12,33 +11,33 @@ import sponsor7 from "@/assets/LandingPage/Logos/lo7.jpg";
 type Sponsor = { name: string; logo: string };
 
 const sponsors: Sponsor[] = [
-  { name: 'Alpheric',        logo: sponsor1 },
-  { name: 'FitVio',          logo: sponsor2 },
-  { name: 'Aimshala',        logo: sponsor3 },
-  { name: 'BigBingo',        logo: sponsor4 },
-  { name: 'EKROCX',          logo: sponsor5 },
-  { name: 'Interior Design', logo: sponsor6 },
-  { name: 'KHELOGE',         logo: sponsor7 },
+  { name: "Alpheric", logo: sponsor1 },
+  { name: "FitVio", logo: sponsor2 },
+  { name: "Aimshala", logo: sponsor3 },
+  { name: "BigBingo", logo: sponsor4 },
+  { name: "EKROCX", logo: sponsor5 },
+  { name: "Interior Design", logo: sponsor6 },
+  { name: "KHELOGE", logo: sponsor7 },
 ];
 
 const SponsorLogos: React.FC = () => (
   <section
-  
     className="
       bg-[#fefefe] text-center
       px-4 md:px-[5vw] lg:px-[120px]
       py-[40px] md:py-[64px] lg:py-24"
   >
     <h2
-   className="
+      className="text-[#000000]
    font-normal leading-[1.1]           /* same weight/line-height         */
      mb-0 md:mb-[10px]                  /* 0 px ≤ 764 px, 10 px above       */
      text-[32px]                        /* 32 px  ≤ 764 px ↴                */
     md:text-[clamp(28px,6vw,48px)]     /* 28-48 px 765-1023 px             */
-    lg:text-[64px]"                   
->
-      Driven by Vision<br />
-      <span className="font-bold">Backed by Brands</span>
+    lg:text-[64px]"
+    >
+      Driven by Vision
+      <br />
+      <span className="font-semibold">Backed by Brands</span>
     </h2>
 
     {/* Sub-headline */}
@@ -49,7 +48,8 @@ const SponsorLogos: React.FC = () => (
         text-[#4b5563] leading-[1.6]
         my-6 lg:my-8"
     >
-      A shared commitment to&nbsp;preserve culture,&nbsp;promote play and inspire change.
+      A shared commitment to&nbsp;preserve culture,&nbsp;promote play and
+      inspire change.
     </p>
 
     {/* ─── infinite marquee ─── */}

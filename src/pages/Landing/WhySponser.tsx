@@ -67,17 +67,14 @@ const WhySponser: FC = () => {
               text-start md:text-left
             "
           >
-            <h2 className="mb-[clamp(12px,2vw,24px)] text-[clamp(28px,4vw,64px)] font-extrabold">
+            <h2 className="mb-[clamp(12px,2vw,24px)] text-[clamp(28px,4vw,64px)] font-semibold">
               Why Sponsor BOS?
             </h2>
 
             <p className="mb-[clamp(16px,2vw,24px)] text-[clamp(16px,2vw,20px)] text-gray-600">
-              Join a movement where sports meet culture and community creates impact.
+Support a movement that blends sports, culture, and community impact
             </p>
-            <p className="mb-[clamp(16px,2vw,24px)] text-[clamp(16px,2vw,20px)] text-gray-600">
-              Partnering with Bond Over Sports means your brand becomes part of something meaningful
-              and lasting.
-            </p>
+            
 
             <p className="text-[clamp(18px,2.5vw,24px)] font-medium">BOS gives your brand:</p>
 
@@ -134,7 +131,7 @@ const WhySponser: FC = () => {
             </div>
 
             <p className="my-[clamp(12px,2vw,16px)] text-[clamp(14px,2vw,20px)] text-gray-500 max-[500px]:text-[clamp(10px,2vw,12px)]">
-              Partner with purpose. Power the play.
+            Be seen where it matters. Be remembered for what matters.
             </p>
 
             <Button

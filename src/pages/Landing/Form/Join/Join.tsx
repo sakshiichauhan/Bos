@@ -258,7 +258,7 @@ const Join = () => {
     <>
 
       <Appbar />
-
+   <Information />
       {!otpSent && (
         <PhoneCard
           mobile={mobile}
@@ -305,7 +305,7 @@ const Join = () => {
         </div>
       )}
 
-      <Information />
+   
 
 
     </>

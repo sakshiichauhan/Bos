@@ -26,19 +26,21 @@ const HeroSection: React.FC = () => {
           <Navbar />
 
           {/* Marquee */}
-          <div className="absolute top-[110px] left-0 w-full overflow-hidden whitespace-nowrap z-0">
-            <div className="animate-marquee text-[clamp(60px,10vw,205px)] font-black uppercase text-white/10 inline-block">
-              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-            </div>
-          </div>
+         <div className="absolute top-[8%] sm:top-[19%] md:top-[18%] lg:top-[15%] left-0 w-full overflow-hidden whitespace-nowrap z-0 pointer-events-none">
+  <div className="animate-marquee text-[clamp(100px,10vw,205px)] font-black uppercase text-white/10 inline-block">
+    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+
 
           {/* Content */}
           <div className="z-10 flex flex-col justify-center flex-grow pt-24 w-full max-w-[1300px]">
             <h1 className="text-white text-[clamp(28px,5vw,51px)] font-bold leading-[1.2em]">
-              Where Heritage Meets Passion,
+              Where Heritage Meets Passion
             </h1>
 
             <h2 className="text-white font-semibold text-[clamp(16px,2.5vw,24px)] mt-4">
@@ -50,9 +52,9 @@ const HeroSection: React.FC = () => {
             </p>
 
             {/* Registered Logos */}
-            <div className="bg-black/30 backdrop-blur-sm text-white text-center mt-8 px-3 py-3 rounded-xl w-fit min-w-[260px]">
+            <div className="bg-black/30 backdrop-blur-sm text-white text-center mt-8 px-3 py-3 rounded-xl w-[203px] sm:min-w-[203px] lg:min-w-[275px]">
               <p className="text-base font-medium mb-1">Registered Under</p>
-              <div className="flex bg-white rounded-lg overflow-hidden gap-[1px]">
+              <div className="flex  rounded-lg overflow-hidden gap-[4px]">
                 <div className="bg-white p-3 flex items-center justify-center min-w-[72px]">
                   <img src={fitLogo} alt="FIT India" className="max-h-[64px] max-w-[72px] object-contain m-[clamp(10px,2vw,26px)]" />
                 </div>
@@ -73,10 +75,9 @@ const HeroSection: React.FC = () => {
 
               {/* Secondary Button with rainbow border */}
               <div className="relative">
-                {/* Remove or comment out the gradient background div if not needed */}
-                {/* <div className="absolute inset-0 rounded-[8px] border-2 border-transparent bg-[linear-gradient(black/50,black/50) bg-origin-padding bg-clip-border pointer-events-none z-0" /> */}
+
                 <Button
-                  className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] overflow-hidden  hover:bg-neutral-800 hover:bg-none"
+                  className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] overflow-hidden hover:text-[#F0F0F0] "
                   onClick={scrollToEvents}
                   text=" Explore Events"
                 />
