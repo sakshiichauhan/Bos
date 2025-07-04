@@ -30,19 +30,19 @@ const WhatYouGet: React.FC = () => (
           <div
             key={lines.join("-")}
             className={`
-              relative flex flex-col box-border bg-white rounded-[8px]
-              shadow-[0_0_10px_rgba(0,0,0,0.1)]
+  relative flex flex-col box-border bg-white rounded-[8px]
+  shadow-[0_0_10px_rgba(0,0,0,0.1)]
 
-              flex-grow basis-full                             /* Mobile default */
-              min-[769px]:basis-[calc(50%_-_12px)]             /* 2 per row at 769–1440px */
-              min-[1441px]:basis-[calc(25%_-_18px)]            /* 4 per row */
+  flex-grow basis-full
+  min-[769px]:basis-[calc(50%_-_12px)]
+  min-[1441px]:basis-[calc(25%_-_18px)]
 
-              pt-[64px] pb-[32px] px-[32px]                    /* Default padding */
-              max-[768px]:pt-[28px] max-[768px]:pb-[16px] max-[768px]:px-[11px]
+  pt-[48px] pb-[24px] px-[32px]                /* Reduced padding */
+  max-[768px]:pt-[28px] max-[768px]:pb-[16px] max-[768px]:px-[11px]
 
-              text-left items-start                            /* Default alignment */
-              max-[768px]:text-center max-[768px]:items-center
-            `}
+  text-left items-start
+  max-[768px]:text-center max-[768px]:items-center
+`}
           >
             {/* Icon */}
             <img

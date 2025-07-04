@@ -15,7 +15,7 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({
       {...rest}
       className={`relative inline-block px-6 py-2 font-medium 
         text-gray-900  text-[clamp(16px,2vw,24px)] 
-        rounded-[10px] border-2 border-transparent overflow-hidden z-10 
+        rounded-[10px] border-1 border-transparent overflow-hidden z-10 
         transition duration-300 ease-in-out 
         focus:outline-none group ${className}`}
     >
@@ -24,7 +24,7 @@ const RainbowButton: React.FC<RainbowButtonProps> = ({
       {/* ::before - rainbow border always visible */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 p-[3px] rounded-[10px] z-[-1] opacity-100 transition-opacity duration-300"
+        className="pointer-events-none absolute inset-0 p-[1px] rounded-[10px] z-[-1] opacity-100 transition-opacity duration-300 group-hover:p-1 "
         style={{
           background:
             'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)',

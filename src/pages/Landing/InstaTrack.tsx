@@ -124,10 +124,12 @@ const InstaFastTrack: FC = () => {
           >
             <button
               className="
-                mt-[12px] inline-flex items-center gap-[8px] font-semibold
-                border border-[#ddd] rounded-[24px] bg-white
+                mt-[12px] inline-flex items-center gap-[8px] font-medium
+                rounded-[24px] bg-white
                 py-[clamp(6px,1vw,8px)] px-[clamp(16px,2vw,24px)]
                 text-[clamp(14px,1.5vw,20px)]
+                  border-2 border-solid border-[#DFDFDF] 
+                      
                 transition-colors duration-200 hover:bg-gray-100
               "
             >
@@ -135,7 +137,7 @@ const InstaFastTrack: FC = () => {
                 src={logo}
                 alt="Instagram"
                 className="
-                  w-[20px] h-[20px]
+                  w-[24px] h-[24px]
                   max-[784px]:w-[16px] max-[784px]:h-[16px]
                 "
               />

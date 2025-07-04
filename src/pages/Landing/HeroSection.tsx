@@ -21,21 +21,19 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-transparent z-0" />
 
       <div className="relative z-10 flex flex-col justify-center items-center pt-16 pb-[clamp(16px,5vh,64px)] min-h-screen w-full">
-        {/* Add container for horizontal padding */}
-        <div className="w-full px-[clamp(16px,10vw,240px)] md:px-[clamp(40px,15vw,240px)]">
+        {/* Responsive padding container */}
+        <div className="w-full px-4 sm:px-6 md:px-[clamp(40px,15vw,240px)]">
           <Navbar />
 
           {/* Marquee */}
-         <div className="absolute top-[8%] sm:top-[19%] md:top-[18%] lg:top-[15%] left-0 w-full overflow-hidden whitespace-nowrap z-0 pointer-events-none">
-  <div className="animate-marquee text-[clamp(100px,10vw,205px)] font-black uppercase text-white/10 inline-block">
-    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-    <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
-  </div>
-</div>
-
-
+          <div className="absolute top-[8%] sm:top-[19%] md:top-[18%] lg:top-[15%] left-0 w-full overflow-hidden whitespace-nowrap z-0 pointer-events-none">
+            <div className="animate-marquee text-[clamp(100px,10vw,205px)] font-black uppercase text-white/10 inline-block">
+              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+              <span>BOND OVER SPORTS&nbsp;&nbsp;&nbsp;</span>
+            </div>
+          </div>
 
           {/* Content */}
           <div className="z-10 flex flex-col justify-center flex-grow pt-24 w-full max-w-[1300px]">
@@ -54,12 +52,20 @@ const HeroSection: React.FC = () => {
             {/* Registered Logos */}
             <div className="bg-black/30 backdrop-blur-sm text-white text-center mt-8 px-3 py-3 rounded-xl w-[203px] sm:min-w-[203px] lg:min-w-[275px]">
               <p className="text-base font-medium mb-1">Registered Under</p>
-              <div className="flex  rounded-lg overflow-hidden gap-[4px]">
+              <div className="flex rounded-lg overflow-hidden gap-[4px]">
                 <div className="bg-white p-3 flex items-center justify-center min-w-[72px]">
-                  <img src={fitLogo} alt="FIT India" className="max-h-[64px] max-w-[72px] object-contain m-[clamp(10px,2vw,26px)]" />
+                  <img
+                    src={fitLogo}
+                    alt="FIT India"
+                    className="max-h-[64px] max-w-[72px] object-contain m-[clamp(10px,2vw,26px)]"
+                  />
                 </div>
                 <div className="bg-white p-3 flex items-center justify-center border-l border-gray-200 min-w-[72px]">
-                  <img src={nitiLogo} alt="NITI Aayog" className="max-h-[64px] max-w-[72px] object-contain m-[clamp(10px,2vw,26px)]" />
+                  <img
+                    src={nitiLogo}
+                    alt="NITI Aayog"
+                    className="max-h-[64px] max-w-[72px] object-contain m-[clamp(10px,2vw,26px)]"
+                  />
                 </div>
               </div>
             </div>
@@ -73,11 +79,10 @@ const HeroSection: React.FC = () => {
                 className="bg-white text-black font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[10px] border-2 border-transparent bg-gradient-to-r from-white to-white bg-clip-padding shadow-lg"
               />
 
-              {/* Secondary Button with rainbow border */}
+              {/* Secondary Button */}
               <div className="relative">
-
                 <Button
-                  className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] overflow-hidden hover:text-[#F0F0F0] "
+                  className="relative z-10 text-white font-medium text-[clamp(16px,2vw,24px)] px-[clamp(24px,3vw,48px)] py-[clamp(14px,1.5vw,17px)] rounded-[8px] overflow-hidden hover:text-[#F0F0F0]"
                   onClick={scrollToEvents}
                   text=" Explore Events"
                 />

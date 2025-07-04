@@ -48,9 +48,10 @@ const StayConnected: React.FC = () => {
 
   return (
     <section className="flex justify-center bg-[#FEFEFE] py-24 px-60 max-2xl:px-[5vw] max-md:py-12 max-sm:px-4">
-      <div className="relative w-full rounded-xl p-[2px]">
+      <div className="relative w-full rounded-xl p-[1px]">
         {/* Gradient border background */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-500 via-yellow-400 to-violet-600" />
+<div className="absolute inset-0 rounded-xl bg-[linear-gradient(to_right,_red,_orange,_yellow,_green,_blue,_indigo,_violet)]" />
+
         
         {/* Content box */}
         <div className="relative z-10 w-full flex flex-wrap gap-6 rounded-xl bg-white p-12 max-lg:p-8 max-md:p-6">
@@ -75,7 +76,7 @@ const StayConnected: React.FC = () => {
               placeholder="Full Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="flex-1 min-w-[220px] rounded-lg border border-gray-200 px-6 py-3 text-lg focus:border-violet-500 focus:outline-none"
+              className="flex-1 min-w-[220px] rounded-lg border border-gray-200 px-6 py-3 text-lg focus:border-[#000000] focus:outline-none"
             />
 
             {/* WhatsApp Number input with +91 prefix */}
