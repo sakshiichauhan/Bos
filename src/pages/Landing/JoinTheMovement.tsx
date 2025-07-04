@@ -85,7 +85,7 @@ const JoinTheMovement = () => {
       <div className="w-full max-w-[1920px] px-4 sm:px-6 md:px-[100px] lg:px-[140px] xl:px-[240px] py-[96px]">
         {/* Header */}
         <div className="text-center mb-10 space-y-2">
-          <h2 className="text-[28px] sm:text-[36px] md:text-[40px] xl:text-[48px] font-bold leading-tight">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[40px] xl:text-[48px] font-semibold leading-tight">
             Join The Movement
           </h2>
           <p className="text-[16px] sm:text-[18px] md:text-[18px] lg:text-[24px] text-[#000000] font-medium">

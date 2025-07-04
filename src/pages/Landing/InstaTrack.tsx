@@ -97,7 +97,7 @@ const InstaFastTrack: FC = () => {
         "
       >
         <div>
-          <h2 className="font-bold text-[clamp(40px,4vw,48px)]">
+          <h2 className="font-semibold text-[clamp(40px,4vw,48px)]">
             BOS Insta Fast Track
           </h2>
 

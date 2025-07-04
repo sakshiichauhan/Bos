@@ -41,7 +41,7 @@ const PartnersSection = () => {
       id="partners"
       className="bg-[#F8F8F8] text-center px-[190px] py-[64px] max-[1360px]:px-[120px] max-[1360px]:py-[48px] max-[1024px]:px-[80px] max-[1024px]:py-[60px] max-[768px]:px-[16px] max-[768px]:py-[40px]"
     >
-      <h2 className="mb-4 font-extrabold text-[54px] max-[1360px]:text-[38px] max-[768px]:text-[32px]">
+      <h2 className="mb-4 font-semibold text-[54px] max-[1360px]:text-[38px] max-[768px]:text-[32px]">
         Our Partners
       </h2>
 

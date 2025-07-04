@@ -107,7 +107,7 @@ const CommunityTalks: React.FC = () => {
     >
       <h2
         className="
-          mb-6 font-extrabold text-[64px]
+          mb-6 font-semibold text-[64px]
           max-[1360px]:text-[56px]
           max-[1060px]:text-[48px]
           max-[764px]:text-[32px]
