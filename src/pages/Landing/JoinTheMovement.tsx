@@ -188,7 +188,7 @@ const Card = ({
           src={imgSm}
           alt={title}
           className={`object-contain rounded-[18px] ${
-            isOrganiser ? 'w-[708px] h-[400px]' : 'max-h-[200px] w-[160px]'
+            isOrganiser ? 'w-[708px] h-[400px]' : 'max-h-[300px] w-[260px]'
           }`}
         />
       </picture>
