@@ -330,12 +330,12 @@ interface PhoneProps {
 
 const PhoneCard = ({ mobile, onChange, onGenerate, loading }: PhoneProps) => (
   <section className="mt-[100px] mb-[60px] flex justify-center">
-    <div className="w-full max-w-[1136px] bg-white px-8 py-10 md:px-16 md:py-14 ">
-      <h1 className="font-semibold text-[32px] md:text-[40px] mb-10">
-        Join the Movement
+    <div className="w-full max-w-[1136px] bg-white px-8 py-10 md:px-16 md:py-14 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
+      <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[40px] mb-2">
+    Register For Event
       </h1>
 
-      <p className="text-left text-base md:text-lg font-medium mb-6">
+      <p className="text-left text-base md:text-lg lg:text-xl font-medium mb-6">
         Please enter a 10-digit mobile number to receive OTP
       </p>
 
