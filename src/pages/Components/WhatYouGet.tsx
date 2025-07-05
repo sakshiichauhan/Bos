@@ -19,14 +19,14 @@ const cards: CardData[] = [
 const WhatYouGet: React.FC = () => (
     <section
     className="bg-gray-100
-               px-4 py-8
+               px-z py-8
                md:px-[80px] md:py-10
                lg:px-[120px] lg:py-12
                xl:px-[193px] xl:py-16
                text-left md:text-center"
   >
-  <div className="mt-[40px] mx-auto px-4 max-w-7xl">
-    <h2 className="text-center mb-[30px] font-semibold text-[clamp(24px,4vw,64px)]">
+  <div className=" mx-auto px-4 max-w-7xl">
+    <h2 className="text-center mb-[34px] font-semibold text-[clamp(24px,4vw,64px)]">
       What You Get
     </h2>
 
