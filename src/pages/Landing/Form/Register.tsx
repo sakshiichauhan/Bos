@@ -251,6 +251,7 @@ const Register: React.FC = () => {
   return (
     <>
       <Appbar />
+          <Information />
 
       {/* ─────────── phone + banner section ─────────── */}
       {!otpSent && (
@@ -307,8 +308,8 @@ const Register: React.FC = () => {
           />
         </div>
       )}
-
-      <Information />
+  <WhatYouGet />
+   
     </>
   );
 };
@@ -325,10 +326,10 @@ interface PhoneProps {
 }
 
 const PhoneCard = ({ mobile, onChange, onGenerate, loading }: PhoneProps) => (
-  <div className="w-full bg-white px-8 py-10 md:px-16 md:py-14 shadow-[0_2px_12px_rgba(0,0,0,0.07)]">
-    <h1 className="font-bold text-[32px] md:text-[40px] mb-10">Join the Movement</h1>
+  <div className="w-full bg-white px-8 py-10 md:px-16 md:py-14 ">
+    <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[40px]  mb-2">    Register For Event</h1>
 
-    <p className="text-left text-base md:text-lg font-medium mb-6">
+    <p className="text-left text-base md:text-lg lg:text-xl font-medium mb-6">
       Please enter a 10-digit mobile number to receive OTP
     </p>
 
@@ -517,22 +518,33 @@ const FormCard = ({
 
 /* ---- landing section ------------------------------------------- */
 const Information = () => (
-  <section className="bg-gray-100 px-4 py-8 md:px-[80px] md:py-10 lg:px-[120px] lg:py-12 xl:px-[193px] xl:py-16 text-left md:text-center">
+  <section
+    className="bg-gray-100
+               px-4 py-8
+               md:px-[80px] md:py-10
+               lg:px-[120px] lg:py-12
+               xl:px-[193px] xl:py-16
+               text-left md:text-center"
+  >
     <div className="max-w-[1920px] mt-10 md:mt-16 lg:mt-20 mx-auto">
-      <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] mb-4">
+      <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] text-[#000000] mb-4">
         Join&nbsp;the&nbsp;Movement
       </h1>
       <h2 className="font-semibold text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] mb-6">
         Be more than just a spectator — be the spirit of the game.
       </h2>
-      <p className="mx-auto text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]
-                    leading-[1.4] md:leading-[1.5] xl:leading-[1.2] text-gray-700
-                    max-w-[1138px]">
+      <p
+        className="mx-auto
+                   text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]
+                   leading-[1.4] md:leading-[1.5] xl:leading-[1.2]
+                   text-[#575757]
+                   max-w-[1138px]"
+      >
         Join hundreds of passionate individuals coming together to celebrate
-        heritage, sportsmanship, and community pride. Whether you&apos;re playing,
+        heritage, sportsmanship, and community pride. Whether you're playing,
         volunteering, organizing, or just capturing the moments — you matter.
       </p>
     </div>
-    <WhatYouGet />
+   
   </section>
 );
