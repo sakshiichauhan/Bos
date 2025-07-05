@@ -34,18 +34,6 @@ const data: Testimonial[] = [
     text: 'As a volunteer, I felt like I was doing something that really mattered. Can’t wait for the next event.',
     avatar: avatar3,
   },
-  // {
-  //   name: 'Deepak, Working Professional',
-  //   location: 'Ghaziabad',
-  //   text: '“I spend my week staring at screens. For once, I spent my Sunday chasing a ball with strangers who felt like friends by the end. No competition. Just connection.” ',
-  //   avatar: avatar4,
-  // },
-  // {
-  //   name: 'Pooja & Nikhil, Couple',
-  //   location: 'Noida',
-  //   text: '“We joined just to see what’s happening. Ended up playing seven stones with kids and uncles from the colony. No awkwardness, no formality. Just people. Just play. Just happiness.” ',
-  //   avatar: avatar5,
-  // },
 ];
 
 const doubled = [...data, ...data];
@@ -56,7 +44,6 @@ const CommunityTalks: React.FC = () => {
   const startX = useRef(0);
   const startScroll = useRef(0);
 
-  /* ---------- infinite loop ---------- */
   useEffect(() => {
     const el = wrap.current;
     if (!el) return;
@@ -73,7 +60,6 @@ const CommunityTalks: React.FC = () => {
     return () => el.removeEventListener('scroll', loop);
   }, []);
 
-  /* ---------- drag-to-scroll ---------- */
   const onDown = (e: React.MouseEvent<HTMLDivElement>) => {
     dragging.current = true;
     startX.current = e.pageX - (wrap.current?.offsetLeft ?? 0);
@@ -81,10 +67,12 @@ const CommunityTalks: React.FC = () => {
     wrap.current?.classList.add('cursor-grabbing');
     e.preventDefault();
   };
+
   const endDrag = () => {
     dragging.current = false;
     wrap.current?.classList.remove('cursor-grabbing');
   };
+
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!dragging.current) return;
     const x = e.pageX - (wrap.current?.offsetLeft ?? 0);
@@ -93,7 +81,6 @@ const CommunityTalks: React.FC = () => {
     e.preventDefault();
   };
 
-  /* ---------- JSX ---------- */
   return (
     <section
       className="
@@ -116,7 +103,6 @@ const CommunityTalks: React.FC = () => {
         Our Community Talks
       </h2>
 
-      {/* scroll wrapper */}
       <div
         ref={wrap}
         onMouseDown={onDown}
@@ -135,13 +121,12 @@ const CommunityTalks: React.FC = () => {
               key={i}
               className="
                 snap-start flex-none
-                w-[500px] rounded-[24px] bg-white px-[32px] pb-[50px] pt-[32px] text-left
+                w-[500px] rounded-[24px] bg-white px-[32px] pb-[32px] pt-[32px] text-left
                 shadow-[0_4px_12px_rgba(0,0,0,0.05)]
                 max-[764px]:w-[70vw] max-[764px]:px-[20px] max-[764px]:pb-[42px]
                 max-[350px]:pb-[24px]
               "
             >
-              {/* header */}
               <div className="mb-[28px] flex items-center justify-between">
                 <div className="flex items-center gap-[10px]">
                   <img
@@ -161,22 +146,11 @@ const CommunityTalks: React.FC = () => {
                 <img
                   src={quoteIcon}
                   alt="quote"
-                  className="
-                    w-[64px]
-                    max-[764px]:w-[48px]
-                    max-[530px]:w-[40px]
-                    max-[450px]:hidden
-                  "
+                  className="w-[64px] max-[764px]:w-[48px] max-[530px]:w-[40px] max-[450px]:hidden"
                 />
               </div>
 
-              <p
-                className="
-                  whitespace-normal break-words
-                  text-[20px] leading-[1.5] text-[#374151]
-                  max-[764px]:text-[16px] max-[350px]:text-[12px]
-                "
-              >
+              <p className="whitespace-normal break-words text-[20px] leading-[1.5] text-[#374151] max-[764px]:text-[16px] max-[350px]:text-[12px]">
                 {t.text}
               </p>
             </div>
