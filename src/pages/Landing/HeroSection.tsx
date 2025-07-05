@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
 
           {/* Content */}
           <div className="z-10 flex flex-col justify-center flex-grow pt-24 w-full max-w-[1300px]">
-            <h1 className="text-white text-[clamp(28px,5vw,51px)] font-bold leading-[1.2em]">
+            <h1 className="text-white text-[clamp(28px,5vw,64px)] font-bold leading-[1.2em]">
               Where Heritage Meets Passion
             </h1>
 

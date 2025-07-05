@@ -1,7 +1,7 @@
 // src/components/CommunityTalks/CommunityTalks.tsx
 import { useEffect, useRef } from 'react';
 
-import avatar1 from '@/assets/LandingPage/CommunityTalks/Avatar1.png';
+import avatar1 from '@/assets/LandingPage/CommunityTalks/Rekha.png';
 import avatar2 from '@/assets/LandingPage/CommunityTalks/avatar4.png';
 import avatar3 from '@/assets/LandingPage/CommunityTalks/avatar3.png';
 import avatar4 from '@/assets/LandingPage/CommunityTalks/avatar3.png';
@@ -17,35 +17,35 @@ interface Testimonial {
 
 const data: Testimonial[] = [
   {
-    name: 'Anita, Mother',
-    location: 'Noida',
-    text: '“For the first time, I saw my daughter leave her phone and run barefoot playing kho-kho. That one moment was worth everything. We forgot what real fun looked like — Bond Over Sports brought it back.” ',
+    name: 'Rekha, Parent',
+    location: 'Noida,UP',
+    text: 'My daughter played kho-kho for the first time. BOS created that platform — I’ll never forget it. ',
     avatar: avatar1,
   },
   {
-    name: 'Rahul, Younger Brother',
-    location: 'Noida',
-    text: '“It wasn’t about winning or losing. It was about playing with my elder brother after years. Same game, same fights, but this time… it felt good. We needed this.” ',
+    name: 'Shubham, Player',
+    location: 'Noida, UP',
+    text: 'I got to represent my locality in football. No politics, no fees, just pure sport. ',
     avatar: avatar2,
   },
   {
-    name: 'Salma , Grandmother',
+    name: 'Anjali, Volunteer',
     location: 'Delhi',
-    text: '“I used to play lagori as a child. Yesterday, I played it again with my grandchildren. Generations apart — but one game brought us together. That’s what matters.”',
+    text: 'As a volunteer, I felt like I was doing something that really mattered. Can’t wait for the next event.',
     avatar: avatar3,
   },
-  {
-    name: 'Deepak, Working Professional',
-    location: 'Ghaziabad',
-    text: '“I spend my week staring at screens. For once, I spent my Sunday chasing a ball with strangers who felt like friends by the end. No competition. Just connection.” ',
-    avatar: avatar4,
-  },
-  {
-    name: 'Pooja & Nikhil, Couple',
-    location: 'Noida',
-    text: '“We joined just to see what’s happening. Ended up playing seven stones with kids and uncles from the colony. No awkwardness, no formality. Just people. Just play. Just happiness.” ',
-    avatar: avatar5,
-  },
+  // {
+  //   name: 'Deepak, Working Professional',
+  //   location: 'Ghaziabad',
+  //   text: '“I spend my week staring at screens. For once, I spent my Sunday chasing a ball with strangers who felt like friends by the end. No competition. Just connection.” ',
+  //   avatar: avatar4,
+  // },
+  // {
+  //   name: 'Pooja & Nikhil, Couple',
+  //   location: 'Noida',
+  //   text: '“We joined just to see what’s happening. Ended up playing seven stones with kids and uncles from the colony. No awkwardness, no formality. Just people. Just play. Just happiness.” ',
+  //   avatar: avatar5,
+  // },
 ];
 
 const doubled = [...data, ...data];

@@ -147,8 +147,6 @@ const InstaFastTrack: FC = () => {
         </div>
       </div>
 
-     
-     
       <div
         ref={scrollerRef}
         className={`
@@ -174,7 +172,7 @@ const InstaFastTrack: FC = () => {
               className={`
                 flex-none relative overflow-hidden
                 w-[clamp(134px,18vw,270px)]
-                max-[784px]:w-[134px]          /* exact mobile width */
+                max-[784px]:w-[134px]         
                 aspect-[9/16]
                 rounded-[12px] snap-start bg-gray-200
                 ${isPlaying ? "border-[4px]" : ""}

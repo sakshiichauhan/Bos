@@ -24,19 +24,19 @@ const HeritageEvents: React.FC = () => {
         <img
           src={img1}
           alt="Event 1"
-          className="w-[clamp(100px,22vw,140px)] lg:w-[clamp(120px,12vw,180px)]
+          className="w-[clamp(100px,22vw,140px)] lg:w-[clamp(120px,12vw,258px)]
             object-cover rounded-[16px] shadow-md relative -bottom-[10px] lg:-bottom-[25px]"
         />
         <img
           src={img2}
           alt="Event 2"
-          className="w-[clamp(120px,25vw,160px)] lg:w-[clamp(140px,14vw,220px)]
+          className="w-[clamp(120px,25vw,160px)] lg:w-[clamp(140px,14vw,258px)]
             object-cover rounded-[16px] shadow-lg relative z-10 -translate-y-[10px] lg:-translate-y-[20px]"
         />
         <img
           src={img3}
           alt="Event 3"
-          className="w-[clamp(100px,22vw,140px)] lg:w-[clamp(120px,12vw,180px)]
+          className="w-[clamp(100px,22vw,140px)] lg:w-[clamp(120px,12vw,258px)]
             object-cover rounded-[16px] shadow-md relative -bottom-[10px] lg:-bottom-[25px]"
         />
 
@@ -71,51 +71,52 @@ const HeritageEvents: React.FC = () => {
       </div>
 
       {/* Content Section */}
-   <div className="max-w-[600px] flex flex-col gap-0 pt-[clamp(16px,3vw,32px)]">
-  <h2 className="text-[clamp(32px,1vw,48px)] font-semibold text-[#000000] leading-[1.2] mb-[18px]">
-    Celebrating Heritage<br />
-    <span className="font-medium">Through Sports</span>
-  </h2>
+   <div className="max-w-[600px] flex flex-col gap-0 pt-4 md:pt-6">
+        <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#000000] leading-[1.2] mb-4">
+          Celebrating Heritage<br />
+          <span className="font-medium mt-1">Through Sports</span>
+        </h2>
 
-  <h4 className="text-[clamp(18px,4vw,24px)] font-semibold text-[#000000] mb-[6px]">
-    Urban to Rural Connect
-  </h4>
+        <h4 className="text-[18px] md:text-[20px] lg:text-[24px] font-semibold text-[#000000] mb-2">
+          Urban to Rural Connect
+        </h4>
 
-  <p className="text-[14px] lg:text-[clamp(16px,2vw,20px)] leading-[1.5] text-[#4B4B4B] font-normal mb-[6px]">
-    BOS bridges the gap between generations, geographies, and lifestyles through meaningful play.
-  </p>
-
-  <ul className="list-none space-y-[clamp(6px,1vw,10px)]">
-    {[
-      {
-        title: "From Gully to Ground",
-        desc: "Celebrating both informal and organized sports.",
-      },
-      {
-        title: "Inclusive by Design",
-        desc: "Everyone can join — no kits, no labels, just play.",
-      },
-      {
-        title: "Stories in Motion",
-        desc: "Every game has a legacy — BOS helps carry it forward.",
-      },
-    ].map((item, idx) => (
-      <li key={idx} className="pl-[30px] relative">
-        <span
-          className="absolute left-0 top-1.5 w-[20px] h-[20px] bg-no-repeat bg-contain"
-          style={{ backgroundImage: `url(${vector})` }}
-        />
-        <p className="text-[#4B4B4B] text-[14px] lg:text-[clamp(16px,1.3vw,20px)] font-semibold">
-          {item.title}
+        <p className="text-[14px] md:text-[16px] lg:text-[20px] text-[#4B4B4B] font-normal mb-4 leading-[1.5]">
+          BOS bridges the gap between generations, geographies, and lifestyles through meaningful play.
         </p>
-        <p className="text-[#4B4B4B] text-[14px] lg:text-[clamp(16px,1.2vw,18px)] font-normal leading-snug">
-          {item.desc}
-        </p>
-      </li>
-    ))}
-  </ul>
-</div>
-   </section>
+
+        <ul className="list-none space-y-2 md:space-y-4">
+  {[
+    {
+      title: "From Gully to Ground",
+      desc: "Celebrating both informal and organized sports.",
+    },
+    {
+      title: "Inclusive by Design",
+      desc: "Everyone can join — no kits, no labels, just play.",
+    },
+    {
+      title: "Stories in Motion",
+      desc: "Every game has a legacy — BOS helps carry it forward.",
+    },
+  ].map((item, idx) => (
+    <li key={idx} className="pl-[30px] relative">
+      <span
+        className="absolute left-0 top-1.5 w-[18px] h-[18px] bg-no-repeat bg-contain"
+        style={{ backgroundImage: `url(${vector})` }}
+      />
+      <p className="text-[#4B4B4B] text-[14px] md:text-[16px] lg:text-[20px] font-semibold">
+        {item.title}
+      </p>
+      <p className="text-[#4B4B4B] mt-1 md:mt-0.5 text-[14px] md:text-[15px] lg:text-[20px] font-normal leading-snug">
+        {item.desc}
+      </p>
+    </li>
+  ))}
+</ul>
+
+      </div>
+    </section>
   );
 };
 

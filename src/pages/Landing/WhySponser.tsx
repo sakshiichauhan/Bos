@@ -1,149 +1,79 @@
-// WhySponser.tsx
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import sportImg from "@/assets/LandingPage/SponsorBos/Sponserwhy.png";
-import vector   from "@/assets/LandingPage/CelebratingHeritage/Vector.png";
-import Button from "@/pages/Components/Button";
+import sportImg from '@/assets/LandingPage/SponsorBos/Sponserwhy.png';
+import vector from '@/assets/LandingPage/CelebratingHeritage/Vector.png';
+import Button from '@/pages/Components/Button';
 
-interface Benefit { title: string }
+interface Benefit {
+  title: string;
+}
+
 const benefits: Benefit[] = [
   { title: 'Meaningful Visibility' },
   { title: 'Grassroots Engagement' },
   { title: 'Authentic CSR Impact' },
 ];
 
-const WhySponser: FC = () => {
+const WhySponsor: FC = () => {
   const navigate = useNavigate();
 
   return (
     <section
       id="sponser"
-      className="
-        flex justify-center bg-[#FEFEFE]
-        px-[clamp(16px,12vw,240px)]
-        py-[clamp(24px,4vw,48px)]
-        max-[1750px]:px-[clamp(16px,3vw,32px)]
-      "
+      className="flex justify-center bg-[#FEFEFE] px-[clamp(16px,12vw,240px)] py-[clamp(24px,4vw,48px)]"
     >
-      {/* ---- gradient border (2 px) ---------------------------------- */}
-      <div
-        className="
-          w-full rounded-[20px] p-[2px]
-          bg-[linear-gradient(to_right,red,orange,green,blue,violet)]
-          [transform:scale(1)] [transform-origin:top_center]
-          max-[1370px]:[transform:scale(0.9)]
-          max-[1200px]:[transform:scale(0.8)]
-          max-[500px]:[transform:scale(1)]
-        "
-      >
-        {/* ---- white panel ------------------------------------------ */}
-        <div
-          className="
-            flex flex-wrap rounded-[18px] bg-white
-            px-[clamp(16px,6vw,48px)] py-[clamp(24px,4vw,48px)]
-            max-[1750px]:px-[clamp(16px,3vw,32px)]
-            max-[1750px]:text-center max-[1750px]:items-center max-[1750px]:justify-center
-          "
-        >
-          {/* ---------- image ---------------------------------------- */}
-          <div
-            className="
-              mb-[clamp(16px,2vw,24px)]
-              flex-[1_1_clamp(200px,40vw,500px)]
-              max-[1750px]:mb-[clamp(12px,2vw,20px)]
-              max-[1370px]:w-[90%] max-[1370px]:flex-none
-            "
-          >
-            <img src={sportImg} alt="BOS Athletes" className="block w-full h-auto" />
+      <div className="w-full rounded-[20px] p-[1px] bg-gradient-to-r from-red-500 via-green-500 to-violet-600">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between bg-white rounded-[18px] px-[clamp(16px,6vw,10px)] py-[clamp(24px,4vw,4px)]">
+          <div className="w-full lg:w-[45%] mb-[clamp(16px,2vw,24px)]">
+            <img
+              src={sportImg}
+              alt="BOS Athletes"
+              className="w-full max-w-full h-auto object-contain"
+            />
           </div>
 
-          {/* ---------- content -------------------------------------- */}
-          <div
-            className="
-              flex-[1_1_clamp(300px,50vw,600px)]
-              md:pl-[clamp(0px,4vw,40px)]
-              max-[1750px]:pl-[clamp(8px,2vw,24px)]
-              text-start md:text-left
-            "
-          >
-            <h2 className="mb-[clamp(12px,2vw,24px)] text-[clamp(28px,4vw,64px)] font-semibold">
+          <div className="w-full lg:w-[55%] text-start">
+            <h2 className="text-[clamp(28px,4vw,64px)] font-extrabold mb-[clamp(12px,2vw,24px)]">
               Why Sponsor BOS?
             </h2>
 
-            <p className="mb-[clamp(16px,2vw,24px)] text-[clamp(16px,2vw,20px)] text-gray-600">
-Support a movement that blends sports, culture, and community impact
+            <p className="text-[clamp(16px,2vw,20px)] text-gray-600 mb-[clamp(16px,2vw,24px)]">
+              Join a movement where sports meet culture and community creates impact.
             </p>
-            
 
-            <p className="text-[clamp(18px,2.5vw,24px)] font-medium">BOS gives your brand:</p>
+            <p className="text-[clamp(16px,2vw,20px)] text-gray-600 mb-[clamp(16px,2vw,24px)]">
+              Partnering with Bond Over Sports means your brand becomes part of something meaningful and lasting.
+            </p>
 
-            {/* ---------- cards -------------------------------------- */}
-            <div
-              className="
-                mt-[clamp(8px,2vw,16px)]
-                flex flex-wrap justify-start gap-[clamp(8px,2vw,16px)]
-                max-[1750px]:justify-center max-[764px]:gap-[clamp(6px,1vw,12px)]
-              "
-            >
-              {benefits.map(({ title }) => (
+            <p className="text-[clamp(18px,2.5vw,24px)] font-medium mb-[clamp(8px,2vw,16px)]">
+              BOS gives your brand:
+            </p>
+
+            <div className="flex flex-wrap gap-[clamp(6px,2vw,1px)] justify-start sm:justify-center mb-[clamp(12px,2vw,24px)]">
+              {benefits.map(({ title }, index) => (
                 <div
-                  key={title}
-                  className="
-                    flex flex-col items-center text-center flex-shrink-0
-                    rounded-lg border-2 border-gray-200 bg-white
-                    transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]
-                    w-[clamp(120px,25vw,200px)] py-[clamp(16px,2vw,34px)]
-                    px-[clamp(8px,2vw,12px)] text-[clamp(16px,2.5vw,20px)]
-                    gap-[clamp(6px,1vw,10px)]
-                    max-[1370px]:w-[clamp(100px,28vw,180px)]
-                    max-[1200px]:w-[clamp(100px,28vw,200px)]
-                    max-[764px]:w-[clamp(100px,30vw,120px)]
-                    max-[764px]:py-[clamp(12px,2vw,16px)] max-[764px]:px-0
-                    max-[764px]:text-[clamp(12px,2vw,14px)]
-                    max-[500px]:w-[calc(33.333%-8px)]
-                    max-[500px]:py-[clamp(8px,1.5vw,12px)] max-[500px]:px-0
-                    max-[500px]:text-[clamp(10px,2vw,14px)]
-                  "
+                  key={index}
+                  className="bg-white border-2 border-gray-200 rounded-[8px] flex flex-col items-center justify-center text-center px-[clamp(8px,1.5vw,12px)] py-[clamp(12px,2vw,16px)] text-[clamp(10px,2vw,14px)] sm:text-[clamp(14px,2vw,18px)] w-[calc(33.333%-8px)]  lg:min-w-[150px] lg:max-w-[264px] lg:min-h-[113px] transition-shadow hover:shadow-md"
                 >
                   <img
                     src={vector}
-                    alt=""
-                    className="
-                      h-[clamp(16px,3vw,32px)] w-[clamp(16px,3vw,32px)]
-                      max-[764px]:h-[clamp(10px,2vw,16px)] max-[764px]:w-[clamp(10px,2vw,16px)]
-                      max-[500px]:h-[clamp(14px,3vw,20px)] max-[500px]:w-[clamp(14px,3vw,20px)]
-                    "
+                    alt="benefit-icon"
+                    className="w-[clamp(14px,3vw,20px)] h-[clamp(14px,3vw,20px)] mb-[clamp(6px,1vw,10px)]"
                   />
-                  <p
-                    className="
-                      font-semibold text-gray-900
-                      w-[clamp(100px,10vw,120px)]
-                      text-[clamp(14px,2vw,20px)]
-                      max-[764px]:text-[clamp(12px,2vw,14px)]
-                      max-[500px]:text-[clamp(9px,2vw,12px)]
-                    "
-                  >
+                  <p className="font-semibold text-gray-900 leading-tight w-[clamp(80px,10vw,120px)]">
                     {title}
                   </p>
                 </div>
               ))}
             </div>
 
-            <p className="my-[clamp(12px,2vw,16px)] text-[clamp(14px,2vw,20px)] text-gray-500 max-[500px]:text-[clamp(10px,2vw,12px)]">
-            Be seen where it matters. Be remembered for what matters.
+            <p className="text-[clamp(10px,2vw,14px)] sm:text-[clamp(14px,2vw,20px)] text-gray-500 mb-[clamp(12px,2vw,16px)]">
+              Partner with purpose. Power the play.
             </p>
 
             <Button
-              className="
-                px-[clamp(16px,4vw,32px)] py-[clamp(10px,2vw,16px)]
-                text-[clamp(16px,3vw,24px)] font-semibold
-                shadow-[0_3px_4px_rgba(0,0,0,0.4)]
-                max-[764px]:text-[clamp(14px,3vw,18px)]
-                max-[500px]:text-[clamp(12px,3vw,16px)]
-                max-[500px]:px-[clamp(10px,3vw,16px)]
-                max-[500px]:py-[clamp(6px,1.5vw,10px)]
-              "
+              className="font-semibold text-[clamp(12px,3vw,18px)] sm:text-[clamp(16px,3vw,24px)] shadow-[0_3px_4px_rgba(0,0,0,0.4)] px-[clamp(10px,3vw,16px)] py-[clamp(6px,1.5vw,10px)] sm:px-[clamp(16px,4vw,32px)] sm:py-[clamp(10px,2vw,16px)] w-fit"
               text="Become a Sponsor"
               onClick={() => navigate('/sponsers')}
             />
@@ -154,4 +84,4 @@ Support a movement that blends sports, culture, and community impact
   );
 };
 
-export default WhySponser;
+export default WhySponsor;

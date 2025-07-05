@@ -59,7 +59,7 @@ const SponsorLogos: React.FC = () => (
           <div
             key={i}
             className="
-              flex-none bg-gray-50 border border-[#dfdfdf] shadow
+              flex-none bg-gray-50 shadow
               w-[100px]                    /* < 768 px  */
               md:w-[clamp(120px,40vw,180px)]
               lg:w-[182px]
