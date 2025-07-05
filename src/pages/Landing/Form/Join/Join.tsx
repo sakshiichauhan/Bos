@@ -258,6 +258,8 @@ const Join = () => {
     <>
 
       <Appbar />
+    
+        
    <Information />
       {!otpSent && (
         <PhoneCard
@@ -303,13 +305,17 @@ const Join = () => {
             subtitle="We've received your registration details. Our team will get in touch with you shortly based on your selected participation type."
           />
         </div>
+        
       )}
-
+    
+  <WhatYouGet />
    
 
 
     </>
+    
   );
+   
 };
 
 export default Join;
@@ -528,7 +534,7 @@ const Information = () => (
                text-left md:text-center"
   >
     <div className="max-w-[1920px] mt-10 md:mt-16 lg:mt-20 mx-auto">
-      <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] mb-4">
+      <h1 className="font-semibold text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] text-[#000000] mb-4">
         Join&nbsp;the&nbsp;Movement
       </h1>
       <h2 className="font-semibold text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] mb-6">
@@ -536,9 +542,9 @@ const Information = () => (
       </h2>
       <p
         className="mx-auto
-                   text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px]
+                   text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]
                    leading-[1.4] md:leading-[1.5] xl:leading-[1.2]
-                   text-gray-700
+                   text-[#575757]
                    max-w-[1138px]"
       >
         Join hundreds of passionate individuals coming together to celebrate
@@ -546,6 +552,6 @@ const Information = () => (
         volunteering, organizing, or just capturing the moments — you matter.
       </p>
     </div>
-    <WhatYouGet />
+   
   </section>
 );

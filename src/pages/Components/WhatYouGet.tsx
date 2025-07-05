@@ -17,8 +17,16 @@ const cards: CardData[] = [
 ];
 
 const WhatYouGet: React.FC = () => (
+    <section
+    className="bg-gray-100
+               px-4 py-8
+               md:px-[80px] md:py-10
+               lg:px-[120px] lg:py-12
+               xl:px-[193px] xl:py-16
+               text-left md:text-center"
+  >
   <div className="mt-[40px] mx-auto px-4 max-w-7xl">
-    <h2 className="text-center mb-[30px] font-bold text-[clamp(24px,4vw,40px)]">
+    <h2 className="text-center mb-[30px] font-semibold text-[clamp(24px,4vw,64px)]">
       What You Get
     </h2>
 
@@ -88,6 +96,7 @@ const WhatYouGet: React.FC = () => (
       })}
     </div>
   </div>
+  </section>
 );
 
 export default WhatYouGet;
