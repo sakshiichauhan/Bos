@@ -4,8 +4,8 @@ import { useEffect, useRef } from 'react';
 import avatar1 from '@/assets/LandingPage/CommunityTalks/Rekha.png';
 import avatar2 from '@/assets/LandingPage/CommunityTalks/avatar4.png';
 import avatar3 from '@/assets/LandingPage/CommunityTalks/avatar3.png';
-import avatar4 from '@/assets/LandingPage/CommunityTalks/avatar3.png';
-import avatar5 from '@/assets/LandingPage/CommunityTalks/Tempavatar.png';
+// import avatar4 from '@/assets/LandingPage/CommunityTalks/avatar3.png';
+// import avatar5 from '@/assets/LandingPage/CommunityTalks/Tempavatar.png';
 import quoteIcon from '@/assets/LandingPage/CommunityTalks/Vector2.png';
 
 interface Testimonial {
