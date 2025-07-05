@@ -42,10 +42,10 @@ const WelfareFoundation = () => {
       </p>
 
       {/* Cards Grid */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8 items-stretch justify-center">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8 items-stretch  justify-center">
         
         {/* Logo card */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-[12px] p-6 h-full">
+        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-white/100 to-white/10 rounded-[12px] p-6 h-full">
           <img
             src={logo}
             alt="HSWF Logo"
@@ -54,7 +54,7 @@ const WelfareFoundation = () => {
         </div>
 
         {/* Legal card */}
-        <div className="flex flex-col justify-center bg-white rounded-[12px] p-6 h-full text-left text-sm sm:text-base text-gray-600">
+        <div className="flex flex-col justify-center bg-gradient-to-b from-white/100 to-white/10  rounded-[12px] p-6 h-full text-left text-sm sm:text-base text-gray-600">
           <h4 className="mb-2 text-base sm:text-lg md:text-xl font-semibold">
             Legal &amp; Registration Details
           </h4>
@@ -65,7 +65,7 @@ const WelfareFoundation = () => {
         </div>
 
         {/* CTA card */}
-        <div className="flex flex-col justify-center bg-white rounded-[12px] p-6 h-full text-center">
+        <div className="flex flex-col justify-center bg-gradient-to-b from-white/100 to-white/10  rounded-[12px] p-6 h-full text-center">
           <Link
             to="https://hswf.network/"
             target="_blank"
